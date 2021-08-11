@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="icon" type="image/png" href="http://example.com/myicon.png">
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Homescreen</title>
 
@@ -21,10 +23,42 @@
 
 <style type="text/css">
 
+.companies {
+    display:none;
+}
+
 </style>
 
 <body>
 <h1>Hello, World!</h1>
+<input id="search" onkeyup="search_companies()" type="text" name="search" placeholder="Search for Companies">
+<ol id='list'>
+    <li class="companies">Amazon</li>
+    <li class="companies">Target</li>
+    <li class="companies">Astrid</li>
+    <li class="companies">AmazingCompany</li>
+    <li class="companies">Walmart</li>
+    <li class="companies">Walgreens</li>
+</ol>
 </body>
+
+<script>
+    function search_companies() {
+        let input = document.getElementById('search').value;
+        input = input.toLowerCase();
+        let companies = document.getElementsByClassName('companies');
+        for (i = 0; i < companies.length; i += 1) {
+            if (input.length == 0) {
+                companies[i].style.display="none";
+            } else {
+                if (companies[i].innerHTML.toLowerCase().substring(0, input.length) === input) {
+                    companies[i].style.display="list-item";
+                } else {
+                    companies[i].style.display="none";
+                }
+            }
+        }
+    }
+</script>
 
 </html>
