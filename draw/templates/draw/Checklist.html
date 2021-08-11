@@ -10,21 +10,150 @@
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <!-- <link href='https://fonts.googleapis.com/css?family=Helvetica' rel='stylesheet'> -->
+
+
 
     <script type="text/javascript" src="{% static 'draw/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+ <h1>My Checklist</h1>
 
     <style type="text/css">
+    .control-me::after {
+    content: "😃";
+    font-size: 100px;
+}
+#toggle:checked ~ .control-me::after {
+    content: "😩";
+}
+
+label {
+    background: #A5D6A7;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+
+.visually-hidden {
+    position: absolute;
+    left: -100vw;
+
+    /* Note, you may want to position the checkbox over top the label and set the opacity to zero instead. It can be better for accessibilty on some touch devices for discoverability. */
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    font: 900 24px/1.4 -system-ui, sans-serif;
+}
+
     </style>
 
 </head>
 
 
 <style type="text/css">
+body {
+background:#90CDEF;
+}
+
+#daily-tasks {
+  height: max-content;
+    width: 900px;
+  background: linear-gradient(#90CDEF, #bbddf0);
+  color: white;
+  border: 2px solid white;
+  margin-bottom: 25px;
+  margin-left:25px;
+  margin-right:25px;
+}
+
+#weekly-tasks {
+  height: max-content;
+  width: 900px;
+  background: linear-gradient(#90CDEF,#bbc0f0);
+  color: white;
+  border: 2px solid white;
+  margin-bottom: 25px;
+  margin-left:25px;
+  margin-right:25px;
+}
+
+#monthly-tasks {
+  height: max-content;
+  width: 900px;
+  background: linear-gradient(#90CDEF, #9198e5);
+  color: white;
+  border: 2px solid white;
+  margin-bottom: 25px;
+  margin-left:25px;
+  margin-right:25px;
+
+}
+
+h1 {
+  font-family:"Montserrat";
+font-stretch: semi-condensed;
+  font-weight: 10;
+  font-size: 30px;
+  color: white;
+    letter-spacing: 1px;
+}
+h2 {
+  font-family: "Montserrat";
+    font-weight: 200;
+  font-size: 20px;
+     color: black;
+ /* letter-spacing: 2px; */
+}
+/* /trebuchet
+American Typewriter
+andale mono*/
+
 
 </style>
 
 <body>
-<h1>Hello, World!</h1>
+<div id="daily-tasks">
+<center> <h1> Daily Tasks </h1> </center>
+<left> <h2> <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+<label for="vehicle1"> I have a bike</label><br> </h2> </left>
+ <h2><input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+ <label for="vehicle2"> I have a car</label><br> </h2>
+ <h2> <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+<label for="vehicle3"> I have a boat</label><br> </h2>
+  </div>
+
+  <div id="weekly-tasks">
+  <center> <h1> Weekly Tasks </h1> </center>
+  <h2> <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+  <label for="vehicle1"> I have a bike</label><br> </h2>
+   <h2><input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+   <label for="vehicle2"> I have a car</label><br> </h2>
+   <h2> <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+  <label for="vehicle3"> I have a boat</label><br> </h2>
+    </div>
+
+    <div id="monthly-tasks">
+    <center> <h1> Monthly Tasks </h1> </center>
+    <h2> <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+    <label for="vehicle1"> I have a bike</label><br> </h2>
+     <h2><input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+     <label for="vehicle2"> I have a car</label><br> </h2>
+     <h2> <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+    <label for="vehicle3"> I have a boat</label><br> </h2>
+      </div>
+
+      <div>
+          <label for="toggle">Toggle</label>
+
+          <input type="checkbox" id="toggle" class="visually-hidden">
+
+          <div class="control-me"></div>
+      </div>
+
 </body>
 
 </html>
