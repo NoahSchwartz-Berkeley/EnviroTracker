@@ -2,7 +2,6 @@
 
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Homescreen</title>
@@ -16,173 +15,627 @@
 
     <style type="text/css">
     </style>
-
-    <link rel="icon" type="image/png" href="http://example.com/myicon.png">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
 </head>
 
 
 <style type="text/css">
 
-    .modal-body{
-        text-align: center
+	body {
+            background: linear-gradient(#9198e5, #90CDEF);
+        }
+
+    .card.container{
+    	background: linear-gradient(#9198e5, #90CDEF);
     }
+
+    /*.card-body{
+    	background-color: white;
+    }*/
+
+	h1{
+		font-size: 80px;
+		padding-top: 100px;
+		margin-left: 25px;
+	}
+
+	h2{
+		font-size: 60px;
+		margin-top: 12px;
+
+	}
+
+	h3{
+		font-size: 43px;
+		margin-top: 19px;
+	}
+
+	h4{
+		font-size: 45px;
+		color: white;
+		text-align: center;
+	}
+
+	h5{
+		font-size: 45px;
+		color: white;
+		text-align: center;
+	}
+
+	h6{
+		font-size: 45px;
+		color: white;
+		text-align: center;
+	}
+
+	.target{
+		margin-top: 20px;
+	}
+
+	.center {
+		display: block;
+	    margin-left: auto;
+		margin-right: auto;
+		width: 50%;
+	}
+
+    #search {
+        width:90%;
+        height:60px;
+        font-size:40px;
+        margin-left:25px;
+        border:5px solid blue;
+    }
+
+    #delete {
+        display:none;
+    }
+
+
 </style>
 
 <body>
-    <h1>Hello, World!</h1>
+    
+	<div class="container-fluid" style="height: 100vh">
+        <input id="search" onkeyup="search_companies()" type="text" name="search" placeholder="Search for Companies">
+		<div class="row" style="height:10vh">
+  			<div class="col-9"></div>
+  			<h1>Featured Companies</h1>
+		</div>
+        
 
-    <div class="card my-5">
-        <div class="card-body">
-            <h1 class="card-title">Company Watchlist</h1>
-            <h2 class="card-subtitle mb-2 text-muted">Card subtitle</h2>
-            <a href="#" class="card-link float-right">+ See More</a>
-        </div>
-    </div>
+		<div class="row" style="height:5vh">
+  			<div class="col-9"></div>
+		</div>
 
+		<div class="row" style="height:10vh; margin-top: 1vh;">
+			<!-- <div class="col-9"></div> -->
+			<!-- <h4>Company Name</h4>
+			<h5>ESG Score</h5>
+			<h6>ESG Rating</h6> -->
 
-    <div class="card my-5">
-        <div class="card-body">
-            <h1 class="card-title">Leaderboard Top Movers</h1>
-            <h2 class="card-subtitle mb-2 text-muted">Card subtitle</h2>
-            <a href="#" class="card-link float-right">+ See More</a>
-        </div>
-    </div>
+			<div class="col-3" style="left:12%;  height:10vh">
+				<h4>Company Name</h4>
+			</div>
+  			<div class="col-3" style=" left:12%;height:10vh">
+  				<h5>ESG Score <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#tipModal">i</button></h5>
+  			</div> 
+			<div class="col-3" style="left:12%;height:10vh">
+				<h6>ESG Rating</h6>
+				<h6><button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#tipModal">i</button><h6>
+			</div> 
 
-    <div class="card my-5">
-        <div class="card-body">
-            <h1 class="card-title">Living a Greener Life:</h1>
-            <h2 class="card-subtitle mb-2 text-muted">General Tips</h2>
-            <br>
-            <div class="row my-2">
-                <div class="col-10">
-                    <h2 class="card-subtitle mb-2" id='tips1'>Buy from sustainable brands</h2>
-                </div>
+		</div>
+		
 
-                <div class="col-2">
-                    <button type="button" class="btn btn-dark " id = 'addbtn1' data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-plus-circle fa-2x"></i></button>
-                </div>
+		<div id="Amazon" class="card container">
+	        <div class="card-body">
+	            <!-- <h1 class="card-title font-weight-bold">Company Watchlist</h1> -->
+	            <div class="row bg-light">
+	                <div class="col-5 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
+	                        style="width:200px; height:114px; border:none; background-color:none">
+	                    <br>
+	                </div>
+	                <div class="col-3 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <h2>BBB</h2>
+	                    <br>
+	                </div>
+	                <div class="col-4 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <h3>AVERAGE</h3>
+	                    <br>
+	                </div>
+	            </div>
             </div>
+    	</div>
 
-            <div class="row my-2">
-                <div class="col-10">
-                    <h2 class="card-subtitle mb-2" id = "tips2">Go to the carwash instead of washing your car by yourself</h2>
-                </div>
-
-                <div class="col-2">
-                    <button type="button" class="btn btn-dark" id='addbtn2' data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                            class="fas fa-plus-circle fa-2x"></i></button>
-                </div>
+    	<div id="Target" class="card container">
+	        <div class="card-body">
+	            <div class="row bg-light">
+	                <div class="col-5 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <img src="https://i.ibb.co/jvdsmNd/target-logo-resized-1080x675.jpg" class="center" 
+	                        style="width:250px; height:52px; border:none; background-color:none">
+	                    <br>
+	                </div>
+	                <div class="col-3 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <h2>AA</h2>
+	                    <br>
+	                </div>
+	                <div class="col-4 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <h3>LEADER</h3>
+	                    <br>
+	                </div>
+	            </div>
             </div>
-
-            <div class="row my-2">
-                <div class="col-10">
-                    <h2 class="card-subtitle mb-2" id='tips3'>Turn off water when brushing your teeth</h2>
-                </div>
-
-                <div class="col-2">
-                    <button type="button" class="btn btn-dark" id = 'addbtn3' data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-plus-circle fa-2x"></i></button>
-                </div>
-            </div>
+    	</div>
 
 
-        </div>
+		 <div id="Nike" class="card container">
+	        <div class="card-body">
+	            <div class="row bg-light">
+	                <div class="col-5 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <img src="https://www.logo.bot/blog/wp-content/uploads/2021/04/Untitled-3-26-1.png" 
+	                        style="width:300px; height:111px; border:none; background-color:none">
+	                    <br>
+	                </div>
+	                <div class="col-3 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <h2>A</h2>
+	                    <br>
+	                </div>
+	                <div class="col-4 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <h3>LEADER</h3>
+	                    <br>
+	                </div>
+	            </div>
+	        </div>
+		</div>
 
-        <a href="#" class="card-link float-right">+ See More</a>
-    </div>
-    </div>
 
-    <nav class="navbar fixed-bottom navbar-light bg-white">
+		<div id="Apple" class="card container">
+	        <div class="card-body">
+	            <div class="row bg-light">
+	                <div class="col-5 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzfHOqVMmGbGpUwHh0bvWXwC4jyn01sfUHkw&usqp=CAU" 
+	                        style="width:250px; height:119px; border:none; background-color:none">
+	                    <br>
+	                </div>
+	                <div class="col-3 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <h2>BBB</h2>
+	                    <br>
+	                </div>
+	                <div class="col-4 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <h3>AVERAGE</h3>
+	                    <br>
+	                </div>
+	            </div>
+	        </div>
+		</div>
+
+		<div id="Best Buy" class="card container">
+	        <div class="card-body">
+	            <div class="row bg-light">
+	                <div class="col-5 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Best_Buy_Logo.svg/1280px-Best_Buy_Logo.svg.png" 
+	                        style="width:220px; height:120px; border:none; background-color:none">
+	                    <br>
+	                </div>
+	                <div class="col-3 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <h2>AAA</h2>
+	                    <br>
+	                </div>
+	                <div class="col-4 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <h3>LEADER</h3>
+	                    <br>
+	                </div>
+	            </div>
+	        </div>
+		</div>
+
+		<div id="Ross" class="card container">
+	        <div class="card-body">
+	            <div class="row bg-light">
+	                <div class="col-5 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Ross_Stores_logo.svg/2560px-Ross_Stores_logo.svg.png" 
+	                        style="width:250px; height:100px; border:none; background-color:none">
+	                    <br>
+	                </div>
+	                <div class="col-3 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <h2>BBB</h2>
+	                    <br>
+	                </div>
+	                <div class="col-4 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <h3>AVERAGE</h3>
+	                    <br>
+	                </div>
+	            </div>
+	        </div>
+		</div>
+
+		<div id="Hewlett Packard" class="card container">
+	        <div class="card-body">
+	            <div class="row bg-light">
+	                <div class="col-5 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <img src="https://1000logos.net/wp-content/uploads/2017/02/HP-Logo-1979.jpg" class="center" 
+	                        style="width:280px; height:168px; border:none; background-color:none">
+	                    <br>
+	                </div>
+	                <div class="col-3 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <h2>AA</h2>
+	                    <br>
+	                </div>
+	                <div class="col-4 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <h3>LEADER</h3>
+	                    <br>
+	                </div>
+	            </div>
+	        </div>
+		</div>
+
+
+		<div id="Sony" class="card container">
+	        <div class="card-body">
+	            <div class="row bg-light">
+	                <div class="col-5 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <img src="https://1000logos.net/wp-content/uploads/2021/05/Sony-logo.png" 
+	                        style="width:250px; height:120px; border:none; background-color:none">
+	                    <br>
+	                </div>
+	                <div class="col-3 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <h2>AAA</h2>
+	                    <br>
+	                </div>
+	                <div class="col-4 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <h3>LEADER</h3>
+	                    <br>
+	                </div>
+	            </div>
+	        </div>
+		</div>
+
+
+		<div id="Netflix" class="card container">
+	        <div class="card-body">
+	            <div class="row bg-light">
+	                <div class="col-5 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png" 
+	                        style="width:240px; height:52px; border:none; background-color:none">
+	                    <br>
+	                </div>
+	                <div class="col-3 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <h2>BB</h2>
+	                    <br>
+	                </div>
+	                <div class="col-4 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <h3>AVERAGE</h3>
+	                    <br>
+	                </div>
+	            </div>
+	        </div>
+		</div>
+
+
+		<div id="Nintendo"  class="card container">
+	        <div class="card-body">
+	            <div class="row bg-light">
+	                <div class="col-5 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <img src="https://1000logos.net/wp-content/uploads/2017/03/Nintendo-Logo-1970.png" class="center" 
+	                        style="width:280px; height:168px; border:none; background-color:none;">
+	                    <br>
+	                </div>
+	                <div class="col-3 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <h2>A</h2>
+	                    <br>
+	                </div>
+	                <div class="col-4 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <h3>AVERAGE</h3>
+	                    <br>
+	                </div>
+	            </div>
+	        </div>
+		</div>
+	
+
+		<div id="Bank Of America"  class="card container">
+	        <div class="card-body">
+	            <div class="row bg-light">
+	                <div class="col-5 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <img src="https://logos-world.net/wp-content/uploads/2020/11/Bank-of-America-Logo.png" 
+	                        style="width:250px; height:150px; border:none; background-color:none">
+	                    <br>
+	                </div>
+	                <div class="col-3 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <h2>BBB</h2>
+	                    <br>
+	                </div>
+	                <div class="col-4 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <h3>AVERAGE</h3>
+	                    <br>
+	                </div>
+	            </div>
+	        </div>
+		</div>
+
+		<div id="Google"  class="card container">
+	        <div class="card-body">
+	            <div class="row bg-light">
+	                <div class="col-5 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/368px-Google_2015_logo.svg.png" 
+	                        style="width:250px; height:90px; border:none; background-color:none">
+	                    <br>
+	                </div>
+	                <div class="col-3 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <h2>BBB</h2>
+	                    <br>
+	                </div>
+	                <div class="col-4 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <h3>AVERAGE</h3>
+	                    <br>
+	                </div>
+	            </div>
+	        </div>
+		</div>
+
+		<div id="Dollar Tree"  class="card container">
+	        <div class="card-body">
+	            <div class="row bg-light">
+	                <div class="col-5 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <img src="https://www.secondharvestmidtn.org/wp-content/uploads/2016/05/dollar-tree-logo-web-670x670-600x197.jpg" 
+	                        style="width:270px; height:100px; border:none; background-color:none">
+	                    <br>
+	                </div>
+	                <div class="col-3 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <h2>BB</h2>
+	                    <br>
+	                </div>
+	                <div class="col-4 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <h3>AVERAGE</h3>
+	                    <br>
+	                </div>
+	            </div>
+	        </div>
+		</div>
+
+
+		<div id="Microsoft"  class="card container">
+	        <div class="card-body">
+	            <div class="row bg-light">
+	                <div class="col-5 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <img src="https://cdn.vox-cdn.com/thumbor/NeSo4JAqv-fFJCIhb5K5eBqvXG4=/7x0:633x417/1200x800/filters:focal(7x0:633x417)/cdn.vox-cdn.com/assets/1311169/mslogo.jpg" 
+	                        style="width:300px; height:168px; border:none; background-color:none">
+	                    <br>
+	                </div>
+	                <div class="col-3 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <h2>AAA</h2>
+	                    <br>
+	                </div>
+	                <div class="col-4 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <h3>LEADER</h3>
+	                    <br>
+	                </div>
+	            </div>
+	        </div>
+		</div>
+
+
+		<div id="Bath and Body Works"  class="card container">
+	        <div class="card-body">
+	            <div class="row bg-light">
+	                <div class="col-5 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <img src="https://1000logos.net/wp-content/uploads/2020/07/Bath-Body-Works-Logo.png" 
+	                        style="width:250px; height:150px; border:none; background-color:none">
+	                    <br>
+	                </div>
+	                <div class="col-3 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <h2>BBB</h2>
+	                    <br>
+	                </div>
+	                <div class="col-4 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <h3>AVERAGE</h3>
+	                    <br>
+	                </div>
+	            </div>
+	        </div>
+		</div>
+
+		<div id="Chipotle"  class="card container">
+	        <div class="card-body">
+	            <div class="row bg-light">
+	                <div class="col-5 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <img src="https://bloximages.chicago2.vip.townnews.com/kearneyhub.com/content/tncms/assets/v3/editorial/7/50/750c207c-4e8a-5247-9592-15e1a82d9ce9/5da86d339125e.image.png?resize=1200%2C314" 
+	                        style="width:250px; height:70px; border:none; background-color:none">
+	                    <br>
+	                </div>
+	                <div class="col-3 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <h2>BBB</h2>
+	                    <br>
+	                </div>
+	                <div class="col-4 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <h3>AVERAGE</h3>
+	                    <br>
+	                </div>
+	            </div>
+	        </div>
+		</div>
+
+
+		<div id="Adobe"  class="card container">
+	        <div class="card-body">
+	            <div class="row bg-light">
+	                <div class="col-5 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Adobe_Corporate_Logo.png/1200px-Adobe_Corporate_Logo.png" 
+	                        style="width:250px; height:70px; border:none; background-color:none">
+	                    <br>
+	                </div>
+	                <div class="col-3 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <h2>AA</h2>
+	                    <br>
+	                </div>
+	                <div class="col-4 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <h3>LEADER</h3>
+	                    <br>
+	                </div>
+	            </div>
+	        </div>
+		</div>
+
+
+		<div id="Adidas" class="card container">
+	        <div class="card-body">
+	            <div class="row bg-light">
+	                <div class="col-5 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <img src="https://1000logos.net/wp-content/uploads/2016/10/Adidas-Logo-2005.jpg" 
+	                        style="width:250px; height:150px; border:none; background-color:none">
+	                    <br>
+	                </div>
+	                <div class="col-3 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <h2>AAA</h2>
+	                    <br>
+	                </div>
+	                <div class="col-4 text-center my-2 border rounded border-dark">
+	                    <br>
+	                    <h3>LEADER</h3>
+	                    <br>
+	                </div>
+	            </div>
+	        </div>
+		</div>
+
+
+
+	</div>
+
+    <nav class="navbar fixed-bottom navbar-light bg-white ">
         <div class="col-3 text-center my-2 border-right border-dark">
-            <button class="text-center r_home" style="border:none; background:none" onclick="location.href = '/draw/welcome'">
+            <button class="text-center " style="border:none; background:none" onclick="location.href = '/draw/welcome'">
                 <i class="fas fa-home fa-5x"></i>
             </button>
         </div>
         <div class="col-3 text-center my-2 border-right border-dark">
-            <button class="text-center r_check" style="border:none; background:none" onclick="location.href = '/draw/Checklist'">
+            <button class="text-center" style="border:none; background:none" onclick="location.href = '/draw/Checklist'">
                 <i class="far fa-check-circle fa-5x"></i>
             </button>
         </div>
         <div class="col-3 text-center my-2 border-right border-dark">
-            <button class="text-center" style="border:none; background:none" onclick="location.href = '/draw/Companies'">
+            <button class="text-center " style="border:none; background:none" onclick="location.href = '/draw/Companies'">
                 <i class="fas fa-desktop fa-5x"></i>
             </button>
         </div>
         <div class="col-3 text-center my-2">
-            <button class="text-center r_leader" style="border:none; background:none"
-            onclick="location.href = '/draw/Leaderboard'">
+            <button class="text-center" style="border:none; background:none" onclick="location.href = '/draw/Leaderboard'">
                 <i class="fas fa-user-friends fa-5x"></i>
             </button>
         </div>
     </nav>
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-                    <label class="btn btn-outline-primary" for="btnradio1">Daily</label>
-                  
-                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-                    <label class="btn btn-outline-primary" for="btnradio2">Weekly</label>
-                  
-                    <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-                    <label class="btn btn-outline-primary" for="btnradio3">Monthly</label>
-                  </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary changes">Save changes</button>
-            </div>
-        </div>
-        </div>
-    </div>
 
-    <script>
-        console.log('hihi')
 
-        var socket = new WebSocket('ws://' + window.location.host + '/ws/draw');
-        var url = window.location.href
-        const url2 = new URL(url)
 
-        document.getElementById("addbtn1").onclick = function () { 
-            document.getElementsByClassName('changes')[0].onclick = function () { send_data1() }
-        }
-        function send_data1() {
-            var data = document.getElementById("tips1").innerHTML
-            console.log('hihi1')
-            socket.send("{\"tips\" : " + "\"" + data + "\"" + ", \"type\" : " + 0 + "}")
-        }
-        document.getElementById("addbtn2").onclick = function () {
-            document.getElementsByClassName('changes')[0].onclick = function () { send_data2() }
-         }
-        function send_data2() {
-            var data = document.getElementById("tips2").innerHTML
-            console.log('hihi2')
-            socket.send("{\"tips\" : " + "\"" + data + "\"" + ", \"type\" : " + 1 + "}")
-        }
-        document.getElementById("addbtn3").onclick = function () { 
-            document.getElementsByClassName('changes')[0].onclick = function () { send_data3() }
-        }
-        function send_data3() {
-            var data = document.getElementById("tips3").innerHTML
-            console.log('hihi3')
-            socket.send("{\"tips\" : " + "\"" + data + "\"" + ", \"type\" : " + 2 + "}")
-        }
-    </script>
-
-    <!-- bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <!-- font awesome -->
+	<!-- bootstrap -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<!-- font awesome -->
     <script src="https://kit.fontawesome.com/5476543f0a.js" crossorigin="anonymous"></script>
+
+
 </body>
 
+<script>
+   // console.log($("#Amazon").style);
+   // $("#Amazon").style.display="none";
+  // var a = document.getElementById("Amazon");
+   //a.style.display="none";
+
+    function search_companies() {
+        
+        $("#Amazon").display="none";
+        let input = document.getElementById('search').value;
+        input = input.toLowerCase();
+        
+        //let companies = document.getElementsByClassName('companies');
+        let companies = ["Amazon", "Target", "Nike", "Apple", "Best Buy", "Ross", "Hewlett Packard", "Sony", "Netflix", "Nintendo", "Bank Of America", "Dollar Tree", "Google", "Microsoft", "Bath and Body Works", "Chipotle", "Adobe", "Adidas"];
+        var company = [];
+        
+        
+        for (i = 0; i < companies.length; i += 1) {
+            company.push(document.getElementById(companies[i]));
+            
+            if (input.length == 0) {
+                //companies[i].style.display="none";
+                company[i].style.display="list-item";
+            } else {
+                if (companies[i].toLowerCase().substring(0, input.length) === input) {
+                    company[i].style.display="list-item";
+                } else {
+                    company[i].style.display="none";
+                }
+            }
+        }
+    }
+</script>
+
 </html>
+
+
+<!-- <div class="row rounded border-dark" style="height: 15vh"> -->
+			<!-- <div class="col-10 bg-success" style="left:8%; right:8%; height:13vh"></div> -->
+		<!-- 	<div class="col bg-dark" style=" margin-top:1vh; height:13vh">
+				<div class = "target"> <img src="https://shelbyreport.nyc3.cdn.digitaloceanspaces.com/wp-content/uploads/2018/03/Target.jpg"
+                        style="width:200px; height:114px; border:none; background-color:none"></div>
+				
+			</div>
+  			<div class="col bg-success" style=" margin-top:1vh; height:13vh"></div>
+  			<div class="col bg-dark" style=" margin-top:1vh; height:13vh"></div> -->
+			<!-- <div class="col-10 bg-dark" style="left:8%; right:8%; height:13vh"></div>
+			<div class="col-10 bg-success" style="left:8%; right:8%; height:13vh"></div> -->
+		<!-- </div> -->
