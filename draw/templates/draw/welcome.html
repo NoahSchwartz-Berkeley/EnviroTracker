@@ -10,6 +10,7 @@
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 
     <script type="text/javascript" src="{% static 'draw/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
 
@@ -25,11 +26,36 @@
 
 
 <style type="text/css">
+body {
+  background: linear-gradient(#9198e5, #90CDEF);
+}
+
+h1 {
+font-family:"Montserrat";
+font-stretch: semi-condensed;
+font-weight: 10;
+font-size: 30px;
+color: white;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-family: "Montserrat";
+    font-weight: 200;
+  font-size: 20px;
+     color: black;
+}
+
+div {
+background: rgba(3, 172, 240, 0.5);
+  border: 2px solid black;
+}
+
 
 </style>
 
 <body>
-	<h1>Hello, World!</h1>
+	<h1>Company Scores</h1>
 
 	<div class="card my-5" >
 	  <div class="card-body">
@@ -83,7 +109,7 @@
 	    		</div>
 	   		</div>
 
-	    	
+
 	     </div>
 
 	    <a href="#" class="card-link float-right">+ See More</a>

@@ -14,5 +14,6 @@ urlpatterns = [
     path('LogIn', views.LogIn, name='LogIn'),
     path('MonthlyTasks', views.MonthlyTasks, name='MonthlyTasks'),
     path('WeeklyTasks', views.WeeklyTasks, name='WeeklyTasks'),
+    path('Checkboxes', views.Checkboxes, name='Checkboxes'),
     path('<str:room_name>/', views.room, name='room'),
 ]

@@ -73,11 +73,10 @@ body {
 body {
 background:#90CDEF;
 }
-
-#daily-tasks {
-  height: max-content;
+#container {
+  height: 1200px;
     width: 900px;
-  background: linear-gradient(#90CDEF, #bbddf0);
+  background: linear-gradient(#90CDEF, #e7d0f5);
   color: white;
   border: 2px solid white;
   margin-bottom: 25px;
@@ -85,10 +84,10 @@ background:#90CDEF;
   margin-right:25px;
 }
 
-#weekly-tasks {
+#task-name {
   height: max-content;
-  width: 900px;
-  background: linear-gradient(#90CDEF,#bbc0f0);
+    width: 850px;
+  background: #9198e5;
   color: white;
   border: 2px solid white;
   margin-bottom: 25px;
@@ -96,10 +95,21 @@ background:#90CDEF;
   margin-right:25px;
 }
 
-#monthly-tasks {
+#subtasks {
   height: max-content;
-  width: 900px;
-  background: linear-gradient(#90CDEF, #9198e5);
+  width: 850px;
+  background: #9198e5;
+  color: white;
+  border: 2px solid white;
+  margin-bottom: 25px;
+  margin-left:25px;
+  margin-right:25px;
+}
+
+#reminder {
+  height: max-content;
+  width: 850px;
+  background: #9198e5;
   color: white;
   border: 2px solid white;
   margin-bottom: 25px;
@@ -123,6 +133,14 @@ h2 {
      color: black;
  /* letter-spacing: 2px; */
 }
+
+h3 {
+  font-family: "Montserrat";
+    font-weight: 200;
+  font-size: 20px;
+     color: white;
+ /* letter-spacing: 2px; */
+}
 /* /trebuchet
 American Typewriter
 andale mono*/
@@ -131,36 +149,24 @@ andale mono*/
 </style>
 
 <body>
-<div id="daily-tasks">
-<center> <h1> Daily Tasks </h1> </center>
-<left> <h2> <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-<label for="vehicle1"> I have a bike</label><br> </h2> </left>
- <h2><input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
- <label for="vehicle2"> I have a car</label><br> </h2>
- <h2> <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-<label for="vehicle3"> I have a boat</label><br> </h2>
+<div id="container" style= "position:relative; bottom:30px;">
+ <h1> Daily Tasks </h1>
+<div id="task-name" style= "position:relative; top:50px;">
+<left><h1> Task name: <br> </h1></left>
+<left> <h2> ___________________________________<br> </h2> </left>
 <button onclick="myFunction()">+</button>
   </div>
 
-  <div id="weekly-tasks">
-  <center> <h1> Weekly Tasks </h1> </center>
-  <h2> <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-  <label for="vehicle1"> I have a bike</label><br> </h2>
-   <h2><input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-   <label for="vehicle2"> I have a car</label><br> </h2>
-   <h2> <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-  <label for="vehicle3"> I have a boat</label><br> </h2>
+  <div id="subtasks" style= "position:relative; top:50px;">
+  <center> <h1> Subtasks: </h1> </center>
+  <left> <h2> ___________________________________<br> </h2> </left>
   <button onclick="myFunction()">+</button>
     </div>
 
-    <div id="monthly-tasks">
-    <center> <h1> Monthly Tasks </h1> </center>
-    <h2> <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-    <label for="vehicle1"> I have a bike</label><br> </h2>
-     <h2><input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-     <label for="vehicle2"> I have a car</label><br> </h2>
-     <h2> <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-    <label for="vehicle3"> I have a boat</label><br> </h2>
+    <div id="reminder" style= "position:relative; top:50px;">
+    <center> <h1> Green tip: Keep it going! </h1> </center>
+    <center> <h1> Want to add a weekly or monthly version of this goal? <br> </h1> </center>
+  <left> <h2> ___________________________________<br> </h2> </left>
     <button onclick="myFunction()">+</button>
       </div>
       <div>
@@ -169,6 +175,7 @@ andale mono*/
           <input type="checkbox" id="toggle" class="visually-hidden">
 
           <div class="control-me"></div>
+      </div>
       </div>
       <input type=button onClick=window.open("window-child.html","Ratting","width=550,
       height=170,left=150,top=200,toolbar=0,status=0,"); value="Open Window">

@@ -21,7 +21,8 @@ def MonthlyTasks(request):
     return render(request, 'draw/MonthlyTasks.html')
 def WeeklyTasks(request):
     return render(request, 'draw/WeeklyTasks.html')
-
+def Checkboxes(request):
+    return render(request, 'draw/Checkboxes.html')
 def room(request, room_name):
     return render(request, 'draw/room.html', {
         'room_name': room_name
