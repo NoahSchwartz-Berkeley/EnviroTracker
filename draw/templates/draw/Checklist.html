@@ -2,131 +2,141 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Homescreen</title>
-    <link rel="icon" type="image/png" href="http://example.com/myicon.png">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Homescreen</title>
+  <link rel="icon" type="image/png" href="http://example.com/myicon.png">
+  <link rel="stylesheet" type="text/css" href="{% static 'draw/vendor/bootstrap/css/bootstrap.min.css' %}">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,700&display=swap" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <!-- <link href='https://fonts.googleapis.com/css?family=Helvetica' rel='stylesheet'> -->
+  <script type="text/javascript" >
+  function addFunc() {
+   var myNodelist = document.getElementsByTagName("p");
+   var i;
+   
+   for (i = 0; i < myNodelist.length; i++) {
+    var span = document.createElement("SPAN");
+    var txt = document.createTextNode("\u00D7");
+    span.className = "close";
+    span.appendChild(txt);
+    myNodelist[i].appendChild(span);
+   }
+  // Click on a close button to hide the current list item
+  // Click on a close button to hide the current list item
+  const checkBox = document.createElement('input')
+  checkBox.type = 'checkbox'
+  
+  var task = document.createElement("p");
+  var inputValue = document.getElementById("myTask").value;
+  var t = document.createTextNode(inputValue);
+  task.appendChild(t);
+  var label = document.createElement('label')
+  checkBox.classList.add("daily" + additionalDaily)
+  label.classList.add("daily" + additionalDaily)
+  label.htmlFor = t;
+  label.appendChild(t);
+  var br = document.createElement('br');
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  task.appendChild(span);
+  if (inputValue === '') {
+  alert("You must write something!");
+  } else {
+  document.getElementById("myUL").appendChild(checkBox);
+  document.getElementById("myUL").appendChild(label);
+  document.getElementById("myUL").appendChild(span);
+  document.getElementById("myUL").appendChild(br);
+  }
+  document.getElementById("myTask").value = "";
+   var span = document.createElement("SPAN");
+   var txt = document.createTextNode("\u00D7");
+   span.className = "close";
+   span.appendChild(txt);
+   task.appendChild(span);
+   // Click on a close button to hide the current list item
+   var close = document.getElementsByClassName("close");
+   
+   var i;
+   for (i = 0; i < close.length; i++) {
+    close[i].classList.add(JSON.stringify(i));
+    close[i].onclick = function() {
+     var div = this.parentElement;
+     //console.log(i);
+     //console.log(close.classList);
+     var vanish = document.getElementsByClassName("daily" + this.classList[1]);
 
-    <link rel="stylesheet" type="text/css" href="{% static 'draw/vendor/bootstrap/css/bootstrap.min.css' %}">
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,700&display=swap" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-    <!-- <link href='https://fonts.googleapis.com/css?family=Helvetica' rel='stylesheet'> -->
-
-
-    <script type="text/javascript" >
-    function addFunc() {
-      var myNodelist = document.getElementsByTagName("p");
-      var i;
-      for (i = 0; i < myNodelist.length; i++) {
-        var span = document.createElement("SPAN");
-        var txt = document.createTextNode("\u00D7");
-        span.className = "close";
-        span.appendChild(txt);
-        myNodelist[i].appendChild(span);
-      }
-
-
-    // Click on a close button to hide the current list item
-    // Click on a close button to hide the current list item
-    const checkBox = document.createElement('input')
-    checkBox.type = 'checkbox'
-    var task = document.createElement("p");
-    var inputValue = document.getElementById("myTask").value;
-    var t = document.createTextNode(inputValue);
-    task.appendChild(t);
-
-    var label = document.createElement('label')
-    label.htmlFor = t;
-    label.appendChild(t);
-
-    var br = document.createElement('br');
-
+     for (j = 0; j < vanish.length; j += 1) {
+       vanish[j].style.display = "none";
+     }
+    // for (j )
+     //label.style.display = "none";
+     //checkBox.style.display = "none";
+     this.style.display = "none";
+    }
+   }
+   additionalDaily += 1;
+ }
+ function addWeek() {
+ // window.open('http://google.com');
+ // document.getElementById("task-name").innerHTML = .join("\n" + "__________________________________________________________________");
+ const checkBox = document.createElement('input')
+ checkBox.type = 'checkbox'
+ var task = document.createElement("p");
+ var inputValue = document.getElementById("weekTask").value;
+ var t = document.createTextNode(inputValue);
+ task.appendChild(t);
+ var label = document.createElement('label')
+ label.htmlFor = t;
+ label.appendChild(t);
+ var br = document.createElement('br');
+ var span = document.createElement("SPAN");
+ var txt = document.createTextNode("\u00D7");
+ span.className = "close";
+ span.appendChild(txt);
+ task.appendChild(span);
+ if (inputValue === '') {
+ alert("You must write something!");
+ } else {
+ document.getElementById("weekUL").appendChild(checkBox);
+ document.getElementById("weekUL").appendChild(label);
+ document.getElementById("weekUL").appendChild(span);
+ document.getElementById("weekUL").appendChild(br);
+ }
+ document.getElementById("weekTask").value = "";
     var span = document.createElement("SPAN");
     var txt = document.createTextNode("\u00D7");
     span.className = "close";
     span.appendChild(txt);
     task.appendChild(span);
 
-    if (inputValue === '') {
-    alert("You must write something!");
-    } else {
-    document.getElementById("myUL").appendChild(checkBox);
-    document.getElementById("myUL").appendChild(label);
-    document.getElementById("myUL").appendChild(span);
-    document.getElementById("myUL").appendChild(br);
+    checkBox.classList.add("weekly" + additionalWeekly)
+    label.classList.add("weekly" + additionalWeekly)
+    // Click on a close button to hide the current list item
+    var close = document.getElementsByClassName("close");
+    var i;
+    for (i = 0; i < close.length; i++) {
+    close[i].classList.add(JSON.stringify(i));
+    close[i].onclick = function() {
+     var div = this.parentElement;
+     //console.log(i);
+     //console.log(close.classList);
+     var vanish = document.getElementsByClassName("weekly" + this.classList[1]);
+
+     for (j = 0; j < vanish.length; j += 1) {
+       vanish[j].style.display = "none";
+     }
+    // for (j )
+     //label.style.display = "none";
+     //checkBox.style.display = "none";
+     this.style.display = "none";
     }
-    document.getElementById("myTask").value = "";
-
-      var span = document.createElement("SPAN");
-      var txt = document.createTextNode("\u00D7");
-      span.className = "close";
-      span.appendChild(txt);
-      task.appendChild(span);
-      // Click on a close button to hide the current list item
-      var close = document.getElementsByClassName("close");
-      var i;
-      for (i = 0; i < close.length; i++) {
-        console.log(i);
-        close[i].onclick = function() {
-          var div = this.parentElement;
-          div.style.display = "none";
-        }
-      }
- }
-
-
-
-
-  function addWeek() {
-  // window.open('http://google.com');
-  // document.getElementById("task-name").innerHTML = .join("\n" + "__________________________________________________________________");
-  const checkBox = document.createElement('input')
-  checkBox.type = 'checkbox'
-  var task = document.createElement("p");
-  var inputValue = document.getElementById("weekTask").value;
-  var t = document.createTextNode(inputValue);
-  task.appendChild(t);
-
-  var label = document.createElement('label')
-  label.htmlFor = t;
-  label.appendChild(t);
-
-  var br = document.createElement('br');
-
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  task.appendChild(span);
-
-  if (inputValue === '') {
-  alert("You must write something!");
-  } else {
-  document.getElementById("weekUL").appendChild(checkBox);
-  document.getElementById("weekUL").appendChild(label);
-  document.getElementById("weekUL").appendChild(span);
-  document.getElementById("weekUL").appendChild(br);
-  }
-  document.getElementById("weekTask").value = "";
-
-        var span = document.createElement("SPAN");
-        var txt = document.createTextNode("\u00D7");
-        span.className = "close";
-        span.appendChild(txt);
-        task.appendChild(span);
-        // Click on a close button to hide the current list item
-        var close = document.getElementsByClassName("close");
-        var i;
-        for (i = 0; i < close.length; i++) {
-          console.log(i);
-          close[i].onclick = function() {
-            var div = this.parentElement;
-            div.style.display = "none";
-          }
-        }
+   }
+   additionalWeekly += 1;
 }
-
 function addMonth() {
 // window.open('http://google.com');
 // document.getElementById("task-name").innerHTML = .join("\n" + "__________________________________________________________________");
@@ -136,13 +146,10 @@ var task = document.createElement("p");
 var inputValue = document.getElementById("monthTask").value;
 var t = document.createTextNode(inputValue);
 task.appendChild(t);
-
 var label = document.createElement('label')
 label.htmlFor = t;
 label.appendChild(t);
-
 var br = document.createElement('br');
-
 var span = document.createElement("SPAN");
 var txt = document.createTextNode("\u00D7");
 span.className = "close";
@@ -157,46 +164,50 @@ document.getElementById("monthUL").appendChild(span);
 document.getElementById("monthUL").appendChild(br);
 }
 document.getElementById("monthTask").value = "";
+   var span = document.createElement("SPAN");
+   var txt = document.createTextNode("\u00D7");
+   span.className = "close";
+   span.appendChild(txt);
+   task.appendChild(span);
+   checkBox.classList.add("monthly" + additionalMonthly)
+    label.classList.add("monthly" + additionalMonthly)
 
-      var span = document.createElement("SPAN");
-      var txt = document.createTextNode("\u00D7");
-      span.className = "close";
-      span.appendChild(txt);
-      task.appendChild(span);
-      // Click on a close button to hide the current list item
-      var close = document.getElementsByClassName("close");
-      var i;
-      for (i = 0; i < close.length; i++) {
-        console.log(i);
-        close[i].onclick = function() {
-          var div = this.parentElement;
-          div.style.display = "none";
-        }
-      }
+   // Click on a close button to hide the current list item
+   var close = document.getElementsByClassName("close");
+   var i;
+   for (i = 0; i < close.length; i++) {
+    close[i].classList.add(JSON.stringify(i));
+    close[i].onclick = function() {
+     var div = this.parentElement;
+     //console.log(i);
+     //console.log(close.classList);
+     var vanish = document.getElementsByClassName("monthly" + this.classList[1]);
+
+     for (j = 0; j < vanish.length; j += 1) {
+       vanish[j].style.display = "none";
+     }
+    // for (j )
+     //label.style.display = "none";
+     //checkBox.style.display = "none";
+     this.style.display = "none";
+    }
+   }
+   additionalMonthly += 1;
 }
-
 //
-//   function dailyFunction() {
-//     console.log("hi");
-//  var myWindow= window.open('Checkboxes');
+//  function dailyFunction() {
+//   console.log("hi");
+// var myWindow= window.open('Checkboxes');
 // myWindow.opener.document.write(task);
-//   }
-
-    </script>
+//  }
+  </script>
  <h1>My Checklist!</h1>
-
-    <style type="text/css">
-
-
-
+  <style type="text/css">
 label {
-    background: #A5D6A7;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
+  background: #A5D6A7;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
 }
-
-
-
 body {
   height: 100vh;
   margin: 0;
@@ -212,74 +223,66 @@ body {
 background:#90CDEF;
 }
 #daily-tasks {
-  height: max-content;
-    width: 900px;
-  background: linear-gradient(#90CDEF, #bbddf0);
-  color: white;
-  border: 2px solid white;
-  margin-bottom: 100px;
-  margin-left:25px;
-  margin-right:25px;
+ height: max-content;
+  width: 900px;
+ background: linear-gradient(#90CDEF, #BBDDF0);
+ color: white;
+ border: 2px solid white;
+ margin-bottom: 100px;
+ margin-left:25px;
+ margin-right:25px;
 }
 #weekly-tasks {
-  height: max-content;
-  width: 900px;
-  background: linear-gradient(#90CDEF,#bbc0f0);
-  color: white;
-  border: 2px solid white;
-  margin-bottom: 100px;
-  margin-left:25px;
-  margin-right:25px;
+ height: max-content;
+ width: 900px;
+ background: linear-gradient(#90CDEF,#BBC0F0);
+ color: white;
+ border: 2px solid white;
+ margin-bottom: 100px;
+ margin-left:25px;
+ margin-right:25px;
 }
 #monthly-tasks {
-  height: max-content;
-  width: 900px;
-  background: linear-gradient(#90CDEF, #9198e5);
-  color: white;
-  border: 2px solid white;
-  margin-bottom: 100px;
-  margin-left:25px;
-  margin-right:25px;
-
+ height: max-content;
+ width: 900px;
+ background: linear-gradient(#90CDEF, #9198E5);
+ color: white;
+ border: 2px solid white;
+ margin-bottom: 100px;
+ margin-left:25px;
+ margin-right:25px;
 }
-
 #container {
-  height: max-content;
-  width: 950px;
-  color: white;
-  border: 2px solid white;
-  margin-bottom: 100px;
-  margin-left:25px;
-  margin-right:25px;
-
+ height: max-content;
+ width: 950px;
+ color: white;
+ border: 2px solid white;
+ margin-bottom: 100px;
+ margin-left:25px;
+ margin-right:25px;
 }
-
 #myUL {
-  height: max-content;
-  color: white;
-  text-align: left;
-
+ height: max-content;
+ color: white;
+ text-align: left;
 }
-
 #weekUL {
-  height: max-content;
-  color: white;
-  text-align: left;
+ height: max-content;
+ color: white;
+ text-align: left;
 }
-
 #monthUL {
-  height: max-content;
-  color: white;
-  text-align: left;
+ height: max-content;
+ color: white;
+ text-align: left;
 }
-
 h1 {
  font-family:"Montserrat";
 font-stretch: semi-condensed;
-  font-weight: 10;
-  font-size: 50px;
-  color: white;
-    letter-spacing: 1px;
+ font-weight: 10;
+ font-size: 50px;
+ color: white;
+  letter-spacing: 1px;
 }
 h2 {
  font-family: "Montserrat";
@@ -299,52 +302,55 @@ andale mono*/
 <center><button style= "position:relative; left:290px;" onclick="addFunc()">+</button></center>
 <input style="width:800px;background:#9198e5; font-size:20pt;" type="text" id="myTask" placeholder="Type here and then hit the +...";>
 <ul id="myUL">
+ </ul>
+  </div>
+ <div id="weekly-tasks" style= "position:relative; bottom:200px;">
+ <center> <h1> Weekly Tasks </h1> </center>
+ <center><button style= "position:relative; left:290px;" onclick="addWeek()">+</button></center>
+ <input style="width:800px;background:#9198e5; font-size:20pt;" type="text" id="weekTask" placeholder="Type here and then hit the +...";>
+ <ul id="weekUL">
   </ul>
+   </div>
+  <div id="monthly-tasks" style= "position:relative; bottom:300px;">
+  <center> <h1> Monthly Tasks </h1> </center>
+  <center><button style= "position:relative; left:290px;" onclick="addMonth()">+</button></center>
+  <input style="width:800px;background:#9198e5; font-size:20pt;" type="text" id="monthTask" placeholder="Type here and then hit the +...";>
+  <ul id="monthUL">
+   </ul>
+    </div>
+   <!-- </div> -->
+   <nav class="navbar fixed-bottom navbar-light bg-white ">
+    <div class="col-3 text-center my-2 border-right border-dark">
+        <button class="text-center " style="border:none; background:none" onclick="location.href = '/draw/welcome'">
+            <i class="fas fa-home fa-5x"></i>
+        </button>
+    </div>
+    <div class="col-3 text-center my-2 border-right border-dark">
+        <button class="text-center" style="border:none; background:none" onclick="location.href = '/draw/Checklist'">
+            <i class="far fa-check-circle fa-5x"></i>
+        </button>
+    </div>
+    <div class="col-3 text-center my-2 border-right border-dark">
+        <button class="text-center " style="border:none; background:none" onclick="location.href = '/draw/Companies'">
+            <i class="fas fa-desktop fa-5x"></i>
+        </button>
+    </div>
+    <div class="col-3 text-center my-2">
+        <button class="text-center" style="border:none; background:none" onclick="location.href = '/draw/Leaderboard'">
+            <i class="fas fa-user-friends fa-5x"></i>
+        </button>
     </div>
 </nav>
 
 
-  <div id="weekly-tasks" style= "position:relative; bottom:200px;">
-  <center> <h1> Weekly Tasks </h1> </center>
-  <center><button style= "position:relative; left:290px;" onclick="addWeek()">+</button></center>
-  <input style="width:800px;background:#9198e5; font-size:20pt;" type="text" id="weekTask" placeholder="Type here and then hit the +...";>
-  <ul id="weekUL">
 
-    </ul>
-      </div>
 
-    <div id="monthly-tasks" style= "position:relative; bottom:300px;">
-    <center> <h1> Monthly Tasks </h1> </center>
-    <center><button style= "position:relative; left:290px;" onclick="addMonth()">+</button></center>
-    <input style="width:800px;background:#9198e5; font-size:20pt;" type="text" id="monthTask" placeholder="Type here and then hit the +...";>
-    <ul id="monthUL">
-      </ul>
-        </div>
-      <!-- </div> -->
-<nav class="navbar fixed-bottom navbar-light bg-white ">
-  <div class="col-3 text-center my-2 border-right border-dark">
-            <button class="text-center " style="border:none; background:none" onclick="location.href = '/draw/welcome'">
-                <i class="fas fa-home fa-5x"></i>
-            </button>
-        </div>
-        <div class="col-3 text-center my-2 border-right border-dark">
-            <button class="text-center" style="border:none; background:none" onclick="location.href = '/draw/Checklist'">
-                <i class="far fa-check-circle fa-5x"></i>
-            </button>
-        </div>
-        <div class="col-3 text-center my-2 border-right border-dark">
-            <button class="text-center " style="border:none; background:none" onclick="location.href = '/draw/Companies'">
-                <i class="fas fa-desktop fa-5x"></i>
-            </button>
-        </div>
-        <div class="col-3 text-center my-2">
-            <button class="text-center" style="border:none; background:none" onclick="location.href = '/draw/Leaderboard'">
-                <i class="fas fa-user-friends fa-5x"></i>
-            </button>
-        </div>
-    </nav>
-
-   <!-- <span id="content1">The first line.</span><span id="content2">The second line.</span> -->
+<!-- bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- font awesome -->
+<script src="https://kit.fontawesome.com/5476543f0a.js" crossorigin="anonymous"></script>
+  </nav>
+  <!-- <span id="content1">The first line.</span><span id="content2">The second line.</span> -->
 </body>
 <script>
   var additionalDaily = 0;
@@ -369,5 +375,4 @@ andale mono*/
         sessionStorage.setItem("Score", JSON.parse(sessionStorage.getItem("Score")) + 1);
     }
 </script>
-
 </html>
