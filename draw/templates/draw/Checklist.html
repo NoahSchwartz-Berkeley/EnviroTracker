@@ -361,17 +361,20 @@ andale mono*/
 <script>
     var types = JSON.parse(sessionStorage.getItem("Type"))
     var dataset = JSON.parse(sessionStorage.getItem("Data"))
-    console.log(dataset.length);
     for (i = 0; i < dataset.length; i += 1) {
         if(types[i] == 0){
-            document.getElementById('daily-tasks').innerHTML += '<h2> <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"> <label for="vehicle1">' + dataset[i] + '</label><br></h2>'
+            document.getElementById('daily-tasks').innerHTML += '<h2> <input onclick="checkedBox()" type="checkbox" id="vehicle1" name="vehicle1" value="Bike"> <label for="vehicle1">' + dataset[i] + '</label><br></h2>'
         }
         else if(types[i] == 1){
-            document.getElementById('weekly-tasks').innerHTML += '<h2> <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"> <label for="vehicle1">' + dataset[i] + '</label><br></h2>'
+            document.getElementById('weekly-tasks').innerHTML += '<h2> <input onclick="checkedBox()" type="checkbox" id="vehicle1" name="vehicle1" value="Bike"> <label for="vehicle1">' + dataset[i] + '</label><br></h2>'
         }
         else if(types[i] == 2){
-            document.getElementById('monthly-tasks').innerHTML += '<h2> <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"> <label for="vehicle1">' + dataset[i] + '</label><br></h2>'
+            document.getElementById('monthly-tasks').innerHTML += '<h2> <input onclick="checkedBox()" type="checkbox" id="vehicle1" name="vehicle1" value="Bike"> <label for="vehicle1">' + dataset[i] + '</label><br></h2>'
         }
+    }
+
+    function checkedBox() {
+        sessionStorage.setItem("Score", JSON.parse(sessionStorage.getItem("Score")) + 1);
     }
 
 </script>

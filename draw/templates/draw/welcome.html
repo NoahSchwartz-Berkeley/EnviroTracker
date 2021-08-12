@@ -121,7 +121,7 @@
     <div class="text-left " id="intro">
         Hi
     </div>
-    <div class="text-left " id="intro2">Leaderboard score: 34</div>
+    <div class="text-left " id="intro2">Leaderboard score: </div>
 
     <div class="card container">
         <div class="card-body">
@@ -216,7 +216,7 @@
 			    </div>
 
 			    <div class="col-3">
-			    	<h2 class="you">9</h2>
+			    	<h2 class="you" id="yourScore">9</h2>
 			    </div>
 			    <div class="col-3">
 			    	<h2 class="you">-1</h2>
@@ -409,6 +409,8 @@
 
         document.getElementById("intro").innerHTML += sessionStorage.getItem("Name") + "!"
         document.getElementById("you").innerHTML = sessionStorage.getItem("Name");
+        document.getElementById("yourScore").innerHTML = sessionStorage.getItem("Score");
+        document.getElementById("intro2").innerHTML += sessionStorage.getItem("Score");
     </script>
 
 
