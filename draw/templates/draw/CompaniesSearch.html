@@ -32,46 +32,31 @@
 
 .companies {
     display:none;
+    width:90%;
+    height:60px;
+    font-size:40px;
+
+}
+
+#search {
+    width:90%;
+    height:60px;
+    font-size:40px;
 }
 
 </style>
 
 <body>
-<h1>Hello, World!</h1>
 
-<?php
-
-echo "Hi!!";
-
-$user = 'Cheat Meal';
-$password = 'EnviroTracker';
-
-$database = 'companies';
-
-$servername = 'localhost:8000';
-
-$mysqli = new mysqli($servername, $user, $password, $database);
-
-if ($mysqli->connect_error) {
-    die('Connect Error (' .
-    $mysqli->connect_errno . ') ' .
-    $mysqlui->connect_error);
-}
-
-$sql = "SELECT * FROM `amazon`";
-$result = $mysqli->query($sql);
-$mysqli->close();
-
-?>
 
 <input id="search" onkeyup="search_companies()" type="text" name="search" placeholder="Search for Companies">
 <ol id='list'>
-    <li class="companies">Amazon</li>
-    <li class="companies">Target</li>
-    <li class="companies">Astrid</li>
-    <li class="companies">AmazingCompany</li>
-    <li class="companies">Walmart</li>
-    <li class="companies">Walgreens</li>
+    <button class="companies">Amazon</button>
+    <button class="companies">Target</button>
+    <button class="companies">Astrid</button>
+    <button class="companies">AmazingCompany</button>
+    <button class="companies">Walmart</button>
+    <button class="companies">Walgreens</button>
 </ol>
 </body>
 
