@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -149,7 +148,6 @@ var txt = document.createTextNode("\u00D7");
 span.className = "close";
 span.appendChild(txt);
 task.appendChild(span);
-
 if (inputValue === '') {
 alert("You must write something!");
 } else {
@@ -200,24 +198,19 @@ label {
 
 
 body {
-    height: 100vh;
-    margin: 0;
-    display: grid;
-    place-items: center;
-    text-align: center;
-    font: 900 24px/1.4 -system-ui, sans-serif;
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  font: 900 24px/1.4 -system-ui, sans-serif;
 }
-
-    </style>
-
+  </style>
 </head>
-
-
 <style type="text/css">
 body {
 background:#90CDEF;
 }
-
 #daily-tasks {
   height: max-content;
     width: 900px;
@@ -228,7 +221,6 @@ background:#90CDEF;
   margin-left:25px;
   margin-right:25px;
 }
-
 #weekly-tasks {
   height: max-content;
   width: 900px;
@@ -239,7 +231,6 @@ background:#90CDEF;
   margin-left:25px;
   margin-right:25px;
 }
-
 #monthly-tasks {
   height: max-content;
   width: 900px;
@@ -283,7 +274,7 @@ background:#90CDEF;
 }
 
 h1 {
-  font-family:"Montserrat";
+ font-family:"Montserrat";
 font-stretch: semi-condensed;
   font-weight: 10;
   font-size: 50px;
@@ -291,19 +282,16 @@ font-stretch: semi-condensed;
     letter-spacing: 1px;
 }
 h2 {
-  font-family: "Montserrat";
-    font-weight: 200;
-  font-size: 20px;
-     color: black;
+ font-family: "Montserrat";
+  font-weight: 200;
+ font-size: 20px;
+   color: black;
  /* letter-spacing: 2px; */
 }
 /* /trebuchet
 American Typewriter
 andale mono*/
-
-
 </style>
-
 <body>
 <!-- <div id="container" style="position:relative; right:10px; bottom:100px;" onclick="addFunc()"> -->
 <div id="daily-tasks" style= "position:relative; bottom:100px;">
@@ -313,6 +301,7 @@ andale mono*/
 <ul id="myUL">
   </ul>
     </div>
+</nav>
 
 
   <div id="weekly-tasks" style= "position:relative; bottom:200px;">
@@ -357,26 +346,28 @@ andale mono*/
 
    <!-- <span id="content1">The first line.</span><span id="content2">The second line.</span> -->
 </body>
-
 <script>
-    var types = JSON.parse(sessionStorage.getItem("Type"))
-    var dataset = JSON.parse(sessionStorage.getItem("Data"))
-    for (i = 0; i < dataset.length; i += 1) {
-        if(types[i] == 0){
-            document.getElementById('daily-tasks').innerHTML += '<h2> <input onclick="checkedBox()" type="checkbox" id="vehicle1" name="vehicle1" value="Bike"> <label for="vehicle1">' + dataset[i] + '</label><br></h2>'
-        }
-        else if(types[i] == 1){
-            document.getElementById('weekly-tasks').innerHTML += '<h2> <input onclick="checkedBox()" type="checkbox" id="vehicle1" name="vehicle1" value="Bike"> <label for="vehicle1">' + dataset[i] + '</label><br></h2>'
-        }
-        else if(types[i] == 2){
-            document.getElementById('monthly-tasks').innerHTML += '<h2> <input onclick="checkedBox()" type="checkbox" id="vehicle1" name="vehicle1" value="Bike"> <label for="vehicle1">' + dataset[i] + '</label><br></h2>'
-        }
+  var additionalDaily = 0;
+  var additionalWeekly = 0;
+  var additionalMonthly = 0;
+  var types = JSON.parse(sessionStorage.getItem("Type"))
+  var dataset = JSON.parse(sessionStorage.getItem("Data"))
+  console.log(dataset.length);
+  for (i = 0; i < dataset.length; i += 1) {
+    if(types[i] == 0){
+      document.getElementById('daily-tasks').innerHTML += '<h2> <input onclick="checkedBox()" type="checkbox" id="vehicle1" name="vehicle1" value="Bike"> <label for="vehicle1">' + dataset[i] + '</label><br></h2>'
     }
+    else if(types[i] == 1){
+      document.getElementById('weekly-tasks').innerHTML += '<h2> <input onclick="checkedBox()" type="checkbox" id="vehicle1" name="vehicle1" value="Bike"> <label for="vehicle1">' + dataset[i] + '</label><br></h2>'
+    }
+    else if(types[i] == 2){
+      document.getElementById('monthly-tasks').innerHTML += '<h2> <input onclick="checkedBox()" type="checkbox" id="vehicle1" name="vehicle1" value="Bike"> <label for="vehicle1">' + dataset[i] + '</label><br></h2>'
+    }
+  }
 
-    function checkedBox() {
+  function checkedBox() {
         sessionStorage.setItem("Score", JSON.parse(sessionStorage.getItem("Score")) + 1);
     }
-
 </script>
 
 </html>
