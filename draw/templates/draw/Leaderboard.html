@@ -89,6 +89,10 @@ font-stretch: semi-condensed;
 		     color: black;
 		}
 
+		#you {
+			color:rgb(0, 160, 0);
+		}
+
 	</style>
 
 
@@ -148,7 +152,7 @@ font-stretch: semi-condensed;
 		    	<h2>3</h2>
 		    </div>
 		    <div class="col-3">
-		    	<h2>Emma</h2>
+		    	<h2 id="you">Emma</h2>
 		    </div>
 
 		    <div class="col-3">
@@ -306,5 +310,9 @@ font-stretch: semi-condensed;
 	<!-- font awesome -->
     <script src="https://kit.fontawesome.com/5476543f0a.js" crossorigin="anonymous"></script>
 </body>
+
+<script>
+	document.getElementById("you").innerHTML = sessionStorage.getItem("Name");
+</script>
 
 </html>
