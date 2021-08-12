@@ -134,33 +134,33 @@ andale mono*/
 <body>
 <div id="daily-tasks">
 <center> <h1> Daily Tasks </h1> </center>
-<left> <h2> <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+<left> <h2> <input onclick="checkedBox()" type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
 <label for="vehicle1"> I have a bike</label><br> </h2> </left>
- <h2><input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+ <h2><input onclick="checkedBox()" type="checkbox" id="vehicle2" name="vehicle2" value="Car">
  <label for="vehicle2"> I have a car</label><br> </h2>
- <h2> <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+ <h2> <input onclick="checkedBox()" type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
 <label for="vehicle3"> I have a boat</label><br> </h2>
 <button onclick="dailyFunction()">+</button>
   </div>
 
   <div id="weekly-tasks">
   <center> <h1> Weekly Tasks </h1> </center>
-  <h2> <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+  <h2> <input onclick="checkedBox()" type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
   <label for="vehicle1"> I have a bike</label><br> </h2>
-   <h2><input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+   <h2><input onclick="checkedBox()" type="checkbox" id="vehicle2" name="vehicle2" value="Car">
    <label for="vehicle2"> I have a car</label><br> </h2>
-   <h2> <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+   <h2> <input onclick="checkedBox()" type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
   <label for="vehicle3"> I have a boat</label><br> </h2>
   <button onclick="weeklyFunction()">+</button>
     </div>
 
     <div id="monthly-tasks">
     <center> <h1> Monthly Tasks </h1> </center>
-    <h2> <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+    <h2> <input onclick="checkedBox()" type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
     <label for="vehicle1"> I have a bike</label><br> </h2>
-     <h2><input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+     <h2><input onclick="checkedBox()" type="checkbox" id="vehicle2" name="vehicle2" value="Car">
      <label for="vehicle2"> I have a car</label><br> </h2>
-     <h2> <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+     <h2> <input onclick="checkedBox()" type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
     <label for="vehicle3"> I have a boat</label><br> </h2>
     <button onclick="monthlyFunction()">+</button>
       </div>
@@ -171,28 +171,31 @@ andale mono*/
 
           <div class="control-me"></div>
       </div>
-<<<<<<< HEAD
-=======
+
+      
       
 <button onclick="myFunction()" id="jumpinjoe">plus</button>
->>>>>>> 43a93de809b114a13e3ceac581703b16724e53c1
+<a href="welcome" id="home">Return To Home</a>
    <!-- <span id="content1">The first line.</span><span id="content2">The second line.</span> -->
 </body>
 
 <script>
     var types = JSON.parse(sessionStorage.getItem("Type"))
     var dataset = JSON.parse(sessionStorage.getItem("Data"))
-    console.log(dataset.length);
     for (i = 0; i < dataset.length; i += 1) {
         if(types[i] == 0){
-            document.getElementById('daily-tasks').innerHTML += '<h2> <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"> <label for="vehicle1">' + dataset[i] + '</label><br></h2>'
+            document.getElementById('daily-tasks').innerHTML += '<h2> <input onclick="checkedBox()" type="checkbox" id="vehicle1" name="vehicle1" value="Bike"> <label for="vehicle1">' + dataset[i] + '</label><br></h2>'
         }
         else if(types[i] == 1){
-            document.getElementById('weekly-tasks').innerHTML += '<h2> <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"> <label for="vehicle1">' + dataset[i] + '</label><br></h2>'
+            document.getElementById('weekly-tasks').innerHTML += '<h2> <input onclick="checkedBox()" type="checkbox" id="vehicle1" name="vehicle1" value="Bike"> <label for="vehicle1">' + dataset[i] + '</label><br></h2>'
         }
         else if(types[i] == 2){
-            document.getElementById('monthly-tasks').innerHTML += '<h2> <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"> <label for="vehicle1">' + dataset[i] + '</label><br></h2>'
+            document.getElementById('monthly-tasks').innerHTML += '<h2> <input onclick="checkedBox()" type="checkbox" id="vehicle1" name="vehicle1" value="Bike"> <label for="vehicle1">' + dataset[i] + '</label><br></h2>'
         }
+    }
+
+    function checkedBox() {
+        sessionStorage.setItem("Score", JSON.parse(sessionStorage.getItem("Score")) + 1);
     }
 
 </script>

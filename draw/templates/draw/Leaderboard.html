@@ -156,7 +156,7 @@ font-stretch: semi-condensed;
 		    </div>
 
 		    <div class="col-3">
-		    	<h2 class="you">9</h2>
+		    	<h2 class="you" id="yourScore">9</h2>
 		    </div>
 		    <div class="col-3">
 		    	<h2 class="you">-1</h2>
@@ -280,27 +280,27 @@ font-stretch: semi-condensed;
 	
 
 	<nav class="navbar fixed-bottom navbar-light bg-white ">
-		<div class="col-3 text-center my-2 border-right border-dark">
-			<button class="text-center " style="border:none; background:none">
-				<i class="fas fa-home fa-5x"></i>
-			</button>
-		</div>
-		<div class="col-3 text-center my-2 border-right border-dark">
-			<button class="text-center" style="border:none; background:none">
-				<i class="far fa-check-circle fa-5x"></i>
-			</button>
-		</div>
-		<div class="col-3 text-center my-2 border-right border-dark">
-			<button class="text-center " style="border:none; background:none">
-				<i class="fas fa-desktop fa-5x"></i>
-			</button>
-		</div>
-		<div class="col-3 text-center my-2">
-			<button class="text-center" style="border:none; background:none">
-				<i class="fas fa-user-friends fa-5x"></i>
-			</button>
-		</div>
-	</nav>
+        <div class="col-3 text-center my-2 border-right border-dark">
+            <button class="text-center " style="border:none; background:none" onclick="location.href = '/draw/welcome'">
+                <i class="fas fa-home fa-5x"></i>
+            </button>
+        </div>
+        <div class="col-3 text-center my-2 border-right border-dark">
+            <button class="text-center" style="border:none; background:none" onclick="location.href = '/draw/Checklist'">
+                <i class="far fa-check-circle fa-5x"></i>
+            </button>
+        </div>
+        <div class="col-3 text-center my-2 border-right border-dark">
+            <button class="text-center " style="border:none; background:none" onclick="location.href = '/draw/Companies'">
+                <i class="fas fa-desktop fa-5x"></i>
+            </button>
+        </div>
+        <div class="col-3 text-center my-2">
+            <button class="text-center" style="border:none; background:none" onclick="location.href = '/draw/Leaderboard'">
+                <i class="fas fa-user-friends fa-5x"></i>
+            </button>
+        </div>
+    </nav>
 
 
 
@@ -313,6 +313,7 @@ font-stretch: semi-condensed;
 
 <script>
 	document.getElementById("you").innerHTML = sessionStorage.getItem("Name");
+	document.getElementById("yourScore").innerHTML = sessionStorage.getItem("Score");
 </script>
 
 </html>
