@@ -14,17 +14,305 @@
     <script type="text/javascript" src="{% static 'draw/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
 
     <style type="text/css">
-    </style>
+  
+	label {
+	    background: #A5D6A7;
+	    padding: 0.5rem 1rem;
+	    border-radius: 0.5rem;
+	}
 
-</head>
-
-
-<style type="text/css">
+	body {
+	    height: 100vh;
+	    margin: 0;
+	    place-items: center;
+	    text-align: center;
+	    font: 900 24px/1.4 -system-ui, sans-serif;
+	}
 
 </style>
 
+</head>
+
 <body>
-<h1>Hello, World!</h1>
+	<style type="text/css">
+		body {
+		background:linear-gradient(#9198e5, #90CDEF);
+		}
+
+		.container {
+		  height: max-content;
+		  background: white;
+		  color: white;
+		  border: 5px solid white;
+		  margin-top: 60px;
+		  margin-left:130px;
+		  margin-right:25px;
+		  align-content: center;
+
+		}
+
+		#intro {
+font-stretch: semi-condensed;
+  font-weight: 10;
+  color: white;
+    letter-spacing: 1px;
+			font-family:"Montserrat";
+		font-size: 65px;
+		  margin-bottom: 10px;
+		  margin-left:50px;
+		  margin-top: 60px;
+		}
+		#intro2 {
+			font-stretch: semi-condensed;
+  font-weight: 10;
+  color: white;
+    letter-spacing: 1px;
+			font-family:"Montserrat";
+		font-size: 50px;
+		  margin-bottom: 35px;
+		  margin-top: 20px;
+		  margin-left:50px;
+		}
+
+		h1 {
+		  font-family:"Montserrat";
+		font-stretch: semi-condensed;
+		  font-weight: 10;
+		  font-size: 40px;
+		  color: black;
+		    letter-spacing: 1px;
+		}
+		h2 {
+		  font-family: "Montserrat";
+		    font-weight: 200;
+		  font-size: 35px;
+		     color: black;
+		}
+
+		.you {
+			color:rgb(0, 160, 0);
+		}
+
+	</style>
+
+
+
+	<div class="card container" >
+	  <div class="card-body">
+	    <h1 class="card-title my-2 mb-5 font-weight-bold">Leaderboard Top Movers</h1>
+	    
+	    <div class="row  pb-3 border-bottom border-dark">
+	    	<div class="col-3">
+		    	<h2>Rank</h2>
+		    </div>
+		    <div class="col-3">
+		    	<h2>Name</h2>
+		    </div>
+
+		    <div class="col-3">
+		    	<h2>Score</h2>
+		    </div>
+		    <div class="col-3">
+		    	<h2>Streak</h2>
+		    </div>
+		</div>
+	    <div class="row my-5">
+	    	<div class="col-3">
+		    	<h2>1</h2>
+		    </div>
+		    <div class="col-3">
+		    	<h2>Josh</h2>
+		    </div>
+
+		    <div class="col-3">
+		    	<h2>12</h2>
+		    </div>
+		    <div class="col-3">
+		    	<h2>1</h2>
+		    </div>
+		</div>
+		<div class="row my-5">
+			<div class="col-3">
+		    	<h2>2</h2>
+		    </div>
+		    <div class="col-3">
+		    	<h2>Luke</h2>
+		    </div>
+
+		    <div class="col-3">
+		    	<h2>11</h2>
+		    </div>
+		    <div class="col-3">
+		    	<h2>3</h2>
+		    </div>
+		</div>
+
+		<div class="row my-5">
+			<div class="col-3">
+		    	<h2 class="you">3</h2>
+		    </div>
+		    <div class="col-3">
+		    	<h2 class="you" id="you">Emma</h2>
+		    </div>
+
+		    <div class="col-3">
+		    	<h2 class="you">9</h2>
+		    </div>
+		    <div class="col-3">
+		    	<h2 class="you">-1</h2>
+		    </div>
+		</div>
+		<div class="row my-5">
+			<div class="col-3">
+		    	<h2 class="text-danger">4</h2>
+		    </div>
+		    <div class="col-3">
+		    	<h2 class="text-danger">Lulu</h2>
+		    </div>
+
+		    <div class="col-3">
+		    	<h2 class="text-danger">7</h2>
+		    </div>
+		    <div class="col-3">
+		    	<h2 class="text-danger">2</h2>
+		    </div>
+		</div>
+		<div class="row my-5">
+			<div class="col-3">
+		    	<h2>5</h2>
+		    </div>
+		    <div class="col-3">
+		    	<h2>Spencer</h2>
+		    </div>
+
+		    <div class="col-3">
+		    	<h2>6</h2>
+		    </div>
+		    <div class="col-3">
+		    	<h2>2</h2>
+		    </div>
+		</div>
+
+		<div class="row my-5">
+			<div class="col-3">
+		    	<h2>6</h2>
+		    </div>
+		    <div class="col-3">
+		    	<h2>Remy</h2>
+		    </div>
+
+		    <div class="col-3">
+		    	<h2>5</h2>
+		    </div>
+		    <div class="col-3">
+		    	<h2>2</h2>
+		    </div>
+		</div>
+		<div class="row my-5">
+			<div class="col-3">
+		    	<h2>7</h2>
+		    </div>
+		    <div class="col-3">
+		    	<h2>Liam</h2>
+		    </div>
+
+		    <div class="col-3">
+		    	<h2>4</h2>
+		    </div>
+		    <div class="col-3">
+		    	<h2>1</h2>
+		    </div>
+		</div>
+
+		<div class="row my-5">
+			<div class="col-3">
+		    	<h2>8</h2>
+		    </div>
+		    <div class="col-3">
+		    	<h2>Neville</h2>
+		    </div>
+
+		    <div class="col-3">
+		    	<h2>3</h2>
+		    </div>
+		    <div class="col-3">
+		    	<h2>1</h2>
+		    </div>
+		</div>
+
+		<div class="row my-5">
+			<div class="col-3">
+		    	<h2>9</h2>
+		    </div>
+		    <div class="col-3">
+		    	<h2>Carly</h2>
+		    </div>
+
+		    <div class="col-3">
+		    	<h2>3</h2>
+		    </div>
+		    <div class="col-3">
+		    	<h2>0</h2>
+		    </div>
+		</div>
+
+		<div class="row my-5">
+			<div class="col-3">
+		    	<h2>10</h2>
+		    </div>
+		    <div class="col-3">
+		    	<h2>Sam</h2>
+		    </div>
+
+		    <div class="col-3">
+		    	<h2>2</h2>
+		    </div>
+		    <div class="col-3">
+		    	<h2>2</h2>
+		    </div>
+		</div>
+
+
+
+	  </div>
+	</div>
+
+	
+
+	<nav class="navbar fixed-bottom navbar-light bg-white ">
+		<div class="col-3 text-center my-2 border-right border-dark">
+			<button class="text-center " style="border:none; background:none">
+				<i class="fas fa-home fa-5x"></i>
+			</button>
+		</div>
+		<div class="col-3 text-center my-2 border-right border-dark">
+			<button class="text-center" style="border:none; background:none">
+				<i class="far fa-check-circle fa-5x"></i>
+			</button>
+		</div>
+		<div class="col-3 text-center my-2 border-right border-dark">
+			<button class="text-center " style="border:none; background:none">
+				<i class="fas fa-desktop fa-5x"></i>
+			</button>
+		</div>
+		<div class="col-3 text-center my-2">
+			<button class="text-center" style="border:none; background:none">
+				<i class="fas fa-user-friends fa-5x"></i>
+			</button>
+		</div>
+	</nav>
+
+
+
+
+	<!-- bootstrap -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<!-- font awesome -->
+    <script src="https://kit.fontawesome.com/5476543f0a.js" crossorigin="anonymous"></script>
 </body>
+
+<script>
+	document.getElementById("you").innerHTML = sessionStorage.getItem("Name");
+</script>
 
 </html>
