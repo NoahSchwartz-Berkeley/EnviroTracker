@@ -53,28 +53,6 @@ var subtaskList = []
     // window.open('Checklist');
       // }
 
-      var types = JSON.parse(sessionStorage.getItem("Type"))
-      var dataset = JSON.parse(sessionStorage.getItem("Data"))
-
-      function send_data_to(){
-          var data1 = document.getElementById('btnradio1').checked
-          if(data1 == true) {
-              types.push(0)
-          }
-          var data2 = document.getElementById('btnradio2').checked
-          if(data2 == true) {
-              types.push(1)
-          }
-          var data3 = document.getElementById('btnradio3').checked
-          if(data3 == true) {
-              types.push(2)
-          }
-          sessionStorage.setItem("Data", JSON.stringify(dataset));
-          sessionStorage.setItem("Type", JSON.stringify(types));
-      }
-
-      document.getElementById("intro").innerHTML += sessionStorage.getItem("Name") + "!"
-      document.getElementById("you").innerHTML = sessionStorage.getItem("Name");
 
   function addFunction() {
     // window.open('http://google.com');

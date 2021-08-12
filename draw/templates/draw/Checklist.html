@@ -15,33 +15,181 @@
     <!-- <link href='https://fonts.googleapis.com/css?family=Helvetica' rel='stylesheet'> -->
 
 
-
     <script type="text/javascript" >
-  //   function toggleClock() {
-  //   $('#jumpinjoe').click(function() {
-  //     alert("Hello! I am an alert box!!");
-  //     // window.open(this.src);
-  //     return false;
-  //   })
-  // }
+    function addFunc() {
+      var myNodelist = document.getElementsByTagName("p");
+      var i;
+      for (i = 0; i < myNodelist.length; i++) {
+        var span = document.createElement("SPAN");
+        var txt = document.createTextNode("\u00D7");
+        span.className = "close";
+        span.appendChild(txt);
+        myNodelist[i].appendChild(span);
+      }
 
-  function dailyFunction() {
-    console.log("hi");
- window.open('Checkboxes');
 
+    // Click on a close button to hide the current list item
+    // Click on a close button to hide the current list item
+    const checkBox = document.createElement('input')
+    checkBox.type = 'checkbox'
+    var task = document.createElement("p");
+    var inputValue = document.getElementById("myTask").value;
+    var t = document.createTextNode(inputValue);
+    task.appendChild(t);
+
+    var label = document.createElement('label')
+    label.htmlFor = t;
+    label.appendChild(t);
+
+    var br = document.createElement('br');
+
+    var span = document.createElement("SPAN");
+    var txt = document.createTextNode("\u00D7");
+    span.className = "close";
+    span.appendChild(txt);
+    task.appendChild(span);
+
+    if (inputValue === '') {
+    alert("You must write something!");
+    } else {
+    document.getElementById("myUL").appendChild(checkBox);
+    document.getElementById("myUL").appendChild(label);
+    document.getElementById("myUL").appendChild(span);
+    document.getElementById("myUL").appendChild(br);
+    }
+    document.getElementById("myTask").value = "";
+
+      var span = document.createElement("SPAN");
+      var txt = document.createTextNode("\u00D7");
+      span.className = "close";
+      span.appendChild(txt);
+      task.appendChild(span);
+      // Click on a close button to hide the current list item
+      var close = document.getElementsByClassName("close");
+      var i;
+      for (i = 0; i < close.length; i++) {
+        console.log(i);
+        close[i].onclick = function() {
+          var div = this.parentElement;
+          div.style.display = "none";
+        }
+      }
+ }
+
+
+
+
+  function addWeek() {
+  // window.open('http://google.com');
+  // document.getElementById("task-name").innerHTML = .join("\n" + "__________________________________________________________________");
+  const checkBox = document.createElement('input')
+  checkBox.type = 'checkbox'
+  var task = document.createElement("p");
+  var inputValue = document.getElementById("weekTask").value;
+  var t = document.createTextNode(inputValue);
+  task.appendChild(t);
+
+  var label = document.createElement('label')
+  label.htmlFor = t;
+  label.appendChild(t);
+
+  var br = document.createElement('br');
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  task.appendChild(span);
+
+  if (inputValue === '') {
+  alert("You must write something!");
+  } else {
+  document.getElementById("weekUL").appendChild(checkBox);
+  document.getElementById("weekUL").appendChild(label);
+  document.getElementById("weekUL").appendChild(span);
+  document.getElementById("weekUL").appendChild(br);
   }
+  document.getElementById("weekTask").value = "";
+
+        var span = document.createElement("SPAN");
+        var txt = document.createTextNode("\u00D7");
+        span.className = "close";
+        span.appendChild(txt);
+        task.appendChild(span);
+        // Click on a close button to hide the current list item
+        var close = document.getElementsByClassName("close");
+        var i;
+        for (i = 0; i < close.length; i++) {
+          console.log(i);
+          close[i].onclick = function() {
+            var div = this.parentElement;
+            div.style.display = "none";
+          }
+        }
+}
+
+function addMonth() {
+// window.open('http://google.com');
+// document.getElementById("task-name").innerHTML = .join("\n" + "__________________________________________________________________");
+const checkBox = document.createElement('input')
+checkBox.type = 'checkbox'
+var task = document.createElement("p");
+var inputValue = document.getElementById("monthTask").value;
+var t = document.createTextNode(inputValue);
+task.appendChild(t);
+
+var label = document.createElement('label')
+label.htmlFor = t;
+label.appendChild(t);
+
+var br = document.createElement('br');
+
+var span = document.createElement("SPAN");
+var txt = document.createTextNode("\u00D7");
+span.className = "close";
+span.appendChild(txt);
+task.appendChild(span);
+
+if (inputValue === '') {
+alert("You must write something!");
+} else {
+document.getElementById("monthUL").appendChild(checkBox);
+document.getElementById("monthUL").appendChild(label);
+document.getElementById("monthUL").appendChild(span);
+document.getElementById("monthUL").appendChild(br);
+}
+document.getElementById("monthTask").value = "";
+
+      var span = document.createElement("SPAN");
+      var txt = document.createTextNode("\u00D7");
+      span.className = "close";
+      span.appendChild(txt);
+      task.appendChild(span);
+      // Click on a close button to hide the current list item
+      var close = document.getElementsByClassName("close");
+      var i;
+      for (i = 0; i < close.length; i++) {
+        console.log(i);
+        close[i].onclick = function() {
+          var div = this.parentElement;
+          div.style.display = "none";
+        }
+      }
+}
+
+//
+//   function dailyFunction() {
+//     console.log("hi");
+//  var myWindow= window.open('Checkboxes');
+// myWindow.opener.document.write(task);
+//   }
 
     </script>
- <h1>My Checklist</h1>
+ <h1>My Checklist!</h1>
 
     <style type="text/css">
-    .control-me::after {
-    content: "😃";
-    font-size: 100px;
-}
-#toggle:checked ~ .control-me::after {
-    content: "😩";
-}
+
+
 
 label {
     background: #A5D6A7;
@@ -49,12 +197,7 @@ label {
     border-radius: 0.5rem;
 }
 
-.visually-hidden {
-    position: absolute;
-    left: -100vw;
 
-    /* Note, you may want to position the checkbox over top the label and set the opacity to zero instead. It can be better for accessibilty on some touch devices for discoverability. */
-}
 
 body {
     height: 100vh;
@@ -81,7 +224,7 @@ background:#90CDEF;
   background: linear-gradient(#90CDEF, #bbddf0);
   color: white;
   border: 2px solid white;
-  margin-bottom: 25px;
+  margin-bottom: 100px;
   margin-left:25px;
   margin-right:25px;
 }
@@ -92,7 +235,7 @@ background:#90CDEF;
   background: linear-gradient(#90CDEF,#bbc0f0);
   color: white;
   border: 2px solid white;
-  margin-bottom: 25px;
+  margin-bottom: 100px;
   margin-left:25px;
   margin-right:25px;
 }
@@ -103,17 +246,47 @@ background:#90CDEF;
   background: linear-gradient(#90CDEF, #9198e5);
   color: white;
   border: 2px solid white;
-  margin-bottom: 25px;
+  margin-bottom: 100px;
   margin-left:25px;
   margin-right:25px;
 
+}
+
+#container {
+  height: max-content;
+  width: 950px;
+  color: white;
+  border: 2px solid white;
+  margin-bottom: 100px;
+  margin-left:25px;
+  margin-right:25px;
+
+}
+
+#myUL {
+  height: max-content;
+  color: white;
+  text-align: left;
+
+}
+
+#weekUL {
+  height: max-content;
+  color: white;
+  text-align: left;
+}
+
+#monthUL {
+  height: max-content;
+  color: white;
+  text-align: left;
 }
 
 h1 {
   font-family:"Montserrat";
 font-stretch: semi-condensed;
   font-weight: 10;
-  font-size: 30px;
+  font-size: 50px;
   color: white;
     letter-spacing: 1px;
 }
@@ -132,50 +305,56 @@ andale mono*/
 </style>
 
 <body>
-<div id="daily-tasks">
+<!-- <div id="container" style="position:relative; right:10px; bottom:100px;" onclick="addFunc()"> -->
+<div id="daily-tasks" style= "position:relative; bottom:100px;">
 <center> <h1> Daily Tasks </h1> </center>
-<left> <h2> <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-<label for="vehicle1"> I have a bike</label><br> </h2> </left>
- <h2><input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
- <label for="vehicle2"> I have a car</label><br> </h2>
- <h2> <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-<label for="vehicle3"> I have a boat</label><br> </h2>
-<button onclick="dailyFunction()">+</button>
-  </div>
-
-  <div id="weekly-tasks">
-  <center> <h1> Weekly Tasks </h1> </center>
-  <h2> <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-  <label for="vehicle1"> I have a bike</label><br> </h2>
-   <h2><input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-   <label for="vehicle2"> I have a car</label><br> </h2>
-   <h2> <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-  <label for="vehicle3"> I have a boat</label><br> </h2>
-  <button onclick="weeklyFunction()">+</button>
+<center><button style= "position:relative; left:290px;" onclick="addFunc()">+</button></center>
+<input style="width:800px;background:#9198e5; font-size:20pt;" type="text" id="myTask" placeholder="Type here and then hit the +...";>
+<ul id="myUL">
+  </ul>
     </div>
 
-    <div id="monthly-tasks">
+
+  <div id="weekly-tasks" style= "position:relative; bottom:200px;">
+  <center> <h1> Weekly Tasks </h1> </center>
+  <center><button style= "position:relative; left:290px;" onclick="addWeek()">+</button></center>
+  <input style="width:800px;background:#9198e5; font-size:20pt;" type="text" id="weekTask" placeholder="Type here and then hit the +...";>
+  <ul id="weekUL">
+
+    </ul>
+      </div>
+
+    <div id="monthly-tasks" style= "position:relative; bottom:300px;">
     <center> <h1> Monthly Tasks </h1> </center>
-    <h2> <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-    <label for="vehicle1"> I have a bike</label><br> </h2>
-     <h2><input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-     <label for="vehicle2"> I have a car</label><br> </h2>
-     <h2> <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-    <label for="vehicle3"> I have a boat</label><br> </h2>
-    <button onclick="monthlyFunction()">+</button>
-      </div>
-      <div>
-          <label for="toggle">Toggle</label>
+    <center><button style= "position:relative; left:290px;" onclick="addMonth()">+</button></center>
+    <input style="width:800px;background:#9198e5; font-size:20pt;" type="text" id="monthTask" placeholder="Type here and then hit the +...";>
+    <ul id="monthUL">
+      </ul>
+        </div>
+      <!-- </div> -->
+<nav class="navbar fixed-bottom navbar-light bg-white ">
+  <div class="col-3 text-center my-2 border-right border-dark">
+            <button class="text-center " style="border:none; background:none" onclick="location.href = '/draw/welcome'">
+                <i class="fas fa-home fa-5x"></i>
+            </button>
+        </div>
+        <div class="col-3 text-center my-2 border-right border-dark">
+            <button class="text-center" style="border:none; background:none" onclick="location.href = '/draw/Checklist'">
+                <i class="far fa-check-circle fa-5x"></i>
+            </button>
+        </div>
+        <div class="col-3 text-center my-2 border-right border-dark">
+            <button class="text-center " style="border:none; background:none" onclick="location.href = '/draw/Companies'">
+                <i class="fas fa-desktop fa-5x"></i>
+            </button>
+        </div>
+        <div class="col-3 text-center my-2">
+            <button class="text-center" style="border:none; background:none" onclick="location.href = '/draw/Leaderboard'">
+                <i class="fas fa-user-friends fa-5x"></i>
+            </button>
+        </div>
+    </nav>
 
-          <input type="checkbox" id="toggle" class="visually-hidden">
-
-          <div class="control-me"></div>
-      </div>
-<<<<<<< HEAD
-=======
-      
-<button onclick="myFunction()" id="jumpinjoe">plus</button>
->>>>>>> 43a93de809b114a13e3ceac581703b16724e53c1
    <!-- <span id="content1">The first line.</span><span id="content2">The second line.</span> -->
 </body>
 
