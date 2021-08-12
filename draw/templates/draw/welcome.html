@@ -10,7 +10,6 @@
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,700&display=swap" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 
     <script type="text/javascript" src="{% static 'draw/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
 
@@ -26,55 +25,158 @@
 
 
 <style type="text/css">
-body {
-  background: linear-gradient(#9198e5, #90CDEF);
-}
 
-h1 {
-font-family:"Montserrat";
-font-stretch: semi-condensed;
-font-weight: 10;
-font-size: 30px;
-color: white;
-  letter-spacing: 1px;
-}
+	label {
+	    background: #A5D6A7;
+	    padding: 0.5rem 1rem;
+	    border-radius: 0.5rem;
+	}
 
-h2 {
-  font-family: "Montserrat";
-    font-weight: 200;
-  font-size: 20px;
-     color: black;
-}
-
-div {
-background: rgba(3, 172, 240, 0.5);
-  border: 2px solid black;
-}
-
+	body {
+	    height: 100vh;
+	    margin: 0;
+	    /* display: grid; */
+	    place-items: center;
+	    text-align: center;
+	    font: 900 24px/1.4 -system-ui, sans-serif;
+	}
 
 </style>
 
 <body>
-	<h1>Company Scores</h1>
 
-	<div class="card my-5" >
+	<style type="text/css">
+		body {
+		background:linear-gradient(#90CDEF, #9198e5);
+		}
+
+		.container {
+		  height: max-content;
+		  width: 900px;
+		  background: white;
+		  color: white;
+		  border: 5px solid white;
+		  margin-bottom: 10px;
+		  margin-left:25px;
+		  margin-right:25px;
+
+		}
+
+		h1 {
+		  font-family:"Montserrat";
+		font-stretch: semi-condensed;
+		  font-weight: 10;
+		  font-size: 30px;
+		  color: black;
+		    letter-spacing: 1px;
+		}
+		h2 {
+		  font-family: "Montserrat";
+		    font-weight: 200;
+		  font-size: 20px;
+		     color: black;
+		}
+
+	</style>
+
+	<h1>Hi Emma!</h1>
+	<h2>Leaderboard score: 34</h2>
+
+	<div class="card container" >
 	  <div class="card-body">
 	    <h1 class="card-title">Company Watchlist</h1>
-	    <h2 class="card-subtitle mb-2 text-muted">Card subtitle</h2>
-	    <a href="#" class="card-link float-right">+ See More</a>
+
+	    <div class="row">
+			<div class="col-4 text-center my-2 border rounded border-dark">
+				<img src="https://www.fintechfutures.com/files/2018/01/amazon-2.png" style="width:140px; height:80px; border:none; background-color:none">
+				<h1>61%</h1>
+			</div>
+			<div class="col-4 text-center my-2 border rounded border-dark">
+				<img src="https://shelbyreport.nyc3.cdn.digitaloceanspaces.com/wp-content/uploads/2018/03/Target.jpg" style="width:140px; height:80px; border:none; background-color:none">
+				<h1>73%</h1>
+			</div>
+			<div class="col-4 text-center my-2 border rounded border-dark">
+				<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/1200px-Logo_NIKE.svg.png" style="width:140px; height:80px; border:none; background-color:none">
+				<h1>84%</h1>
+			</div>
+		</div>
+
+		 <a href="#" class="card-link float-right">+ See More</a>
 	  </div>
 	</div>
 
 
-	<div class="card my-5" >
+	<div class="card container" >
 	  <div class="card-body">
-	    <h1 class="card-title">Leaderboard Top Movers</h1>
-	    <h2 class="card-subtitle mb-2 text-muted">Card subtitle</h2>
+	    <h1 class="card-title mb-5">Leaderboard Top Movers</h1>
+
+	    <div class="row my-2">
+		    <div class="col-4">
+		    	<h2>User 1</h2>
+		    </div>
+
+		    <div class="col-4">
+		    	<h2>12</h2>
+		    </div>
+		    <div class="col-4">
+		    	<h2>+1</h2>
+		    </div>
+		</div>
+		<div class="row my-2">
+		    <div class="col-4">
+		    	<h2>User 2</h2>
+		    </div>
+
+		    <div class="col-4">
+		    	<h2>11</h2>
+		    </div>
+		    <div class="col-4">
+		    	<h2>+3</h2>
+		    </div>
+		</div>
+
+		<div class="row my-2">
+		    <div class="col-4">
+		    	<h2>User 3</h2>
+		    </div>
+
+		    <div class="col-4">
+		    	<h2>9</h2>
+		    </div>
+		    <div class="col-4">
+		    	<h2>-1</h2>
+		    </div>
+		</div>
+		<div class="row my-2">
+		    <div class="col-4">
+		    	<h2>User 4</h2>
+		    </div>
+
+		    <div class="col-4">
+		    	<h2>7</h2>
+		    </div>
+		    <div class="col-4">
+		    	<h2>+2</h2>
+		    </div>
+		</div>
+		<div class="row my-2">
+		    <div class="col-4">
+		    	<h2>User 5</h2>
+		    </div>
+
+		    <div class="col-4">
+		    	<h2>6</h2>
+		    </div>
+		    <div class="col-4">
+		    	<h2>-2</h2>
+		    </div>
+		</div>
+
 	    <a href="#" class="card-link float-right">+ See More</a>
 	  </div>
 	</div>
 
-	<div class="card my-5" >
+	<div class="card container" >
 	    <div class="card-body">
 	    	<h1 class="card-title">Living a Greener Life:</h1>
 	    	<h2 class="card-subtitle mb-2 text-muted">General Tips</h2>
@@ -105,7 +207,7 @@ background: rgba(3, 172, 240, 0.5);
 	    		</div>
 
 	    		<div class="col-2">
-	    			<i class="fas fa-plus-circle fa-2x"></i>
+	    			<i class="fas fa-plus-circle fa-2x "></i>
 	    		</div>
 	   		</div>
 
@@ -116,7 +218,7 @@ background: rgba(3, 172, 240, 0.5);
 	  </div>
 	</div>
 
-	<nav class="navbar fixed-bottom navbar-light bg-white">
+	<nav class="navbar fixed-bottom navbar-light bg-white ">
 		<div class="col-3 text-center my-2 border-right border-dark">
 			<button class="text-center " style="border:none; background:none">
 				<i class="fas fa-home fa-5x"></i>

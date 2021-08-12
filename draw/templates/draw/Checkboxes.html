@@ -16,31 +16,113 @@
 
 
     <script type="text/javascript" >
-  //   function toggleClock() {
-  //   $('#jumpinjoe').click(function() {
-  //     alert("Hello! I am an alert box!!");
-  //     // window.open(this.src);
-  //     return false;
-  //   })
-  // }
+    function myCancel() {
+      window.open('Checklist');
+    }
+    // Create a "close" button and append it to each list item
+    var myNodelist = document.getElementsByTagName("LI");
+    var myPlist = document.getElementsByTagName("p");
+    var i;
+    for (i = 0; i < myNodelist.length; i++) {
+      var span = document.createElement("SPAN");
+      var txt = document.createTextNode("\u00D7");
+      span.className = "close";
+      span.appendChild(txt);
+      myNodelist[i].appendChild(span);
+    }
 
-  function myFunction() {
-    console.log("hi");
+    // Click on a close button to hide the current list item
+    var close = document.getElementsByClassName("close");
+    var i;
+    for (i = 0; i < close.length; i++) {
+      close[i].onclick = function() {
+        var div = this.parentElement;
+        div.style.display = "none";
+      }
+    }
+
+  function myDone(){
+    var myNodelist = document.getElementsByTagName("LI");
+    var myPlist = document.getElementsByTagName("p");
+    for (i = 0; i < myNodelist.length; i++) {
+      if (myNodelist[i]!= span){
+      console.log(myNodelist[i].innerText)
+      // sessionStorage.setItem("Additions", myNodelist[i].innerText);
+        }
+    // window.open('Checklist');
+      }
+    }
+
+
+  function addFunction() {
     // window.open('http://google.com');
-
+    // document.getElementById("task-name").innerHTML = .join("\n" + "__________________________________________________________________");
+  var li = document.createElement("p");
+  var inputValue = document.getElementById("myTask").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
   }
+  if (myPlist.length <1) {
+    console.log(li);
+    document.getElementById("myUL").appendChild(li);
+  } else {
+      console.log(myNodelist.length);
+    alert("Only one task name!");
+  }
+  document.getElementById("myTask").value = "";
 
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
+
+function addSub() {
+  // window.open('http://google.com');
+  // document.getElementById("task-name").innerHTML = .join("\n" + "__________________________________________________________________");
+var li = document.createElement("li");
+var inputValue = document.getElementById("mySub").value;
+var t = document.createTextNode(inputValue);
+li.appendChild(t);
+if (inputValue === '') {
+  alert("You must write something!");
+} else {
+  document.getElementById("secondUL").appendChild(li);
+}
+document.getElementById("mySub").value = "";
+
+var span = document.createElement("SPAN");
+var txt = document.createTextNode("\u00D7");
+span.className = "close";
+span.appendChild(txt);
+li.appendChild(span);
+
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+}
     </script>
+<div id="intro">
  <h1>My Checklist</h1>
+</div>
 
-    <style type="text/css">
-    .control-me::after {
-    content: "😃";
-    font-size: 100px;
-}
-#toggle:checked ~ .control-me::after {
-    content: "😩";
-}
+</head>
+
+
+<style type="text/css">
 
 label {
     background: #A5D6A7;
@@ -48,28 +130,6 @@ label {
     border-radius: 0.5rem;
 }
 
-.visually-hidden {
-    position: absolute;
-    left: -100vw;
-
-    /* Note, you may want to position the checkbox over top the label and set the opacity to zero instead. It can be better for accessibilty on some touch devices for discoverability. */
-}
-
-body {
-    height: 100vh;
-    margin: 0;
-    display: grid;
-    place-items: center;
-    text-align: center;
-    font: 900 24px/1.4 -system-ui, sans-serif;
-}
-
-    </style>
-
-</head>
-
-
-<style type="text/css">
 body {
 background:#90CDEF;
 }
@@ -83,6 +143,10 @@ background:#90CDEF;
   margin-left:25px;
   margin-right:25px;
 }
+#intro {
+margin-top:50px;
+text-indent: 50px;
+}
 
 #task-name {
   height: max-content;
@@ -93,6 +157,8 @@ background:#90CDEF;
   margin-bottom: 25px;
   margin-left:25px;
   margin-right:25px;
+  text-indent: 50px;
+  text-align: left;
 }
 
 #subtasks {
@@ -104,6 +170,8 @@ background:#90CDEF;
   margin-bottom: 25px;
   margin-left:25px;
   margin-right:25px;
+    text-indent: 50px;
+  text-align: left;
 }
 
 #reminder {
@@ -115,7 +183,7 @@ background:#90CDEF;
   margin-bottom: 25px;
   margin-left:25px;
   margin-right:25px;
-
+  text-align: left;
 }
 
 h1 {
@@ -137,10 +205,11 @@ h2 {
 h3 {
   font-family: "Montserrat";
     font-weight: 200;
-  font-size: 20px;
-     color: white;
+  font-size: 30px;
+     color: #7eeb60;
  /* letter-spacing: 2px; */
 }
+
 /* /trebuchet
 American Typewriter
 andale mono*/
@@ -149,37 +218,39 @@ andale mono*/
 </style>
 
 <body>
-<div id="container" style= "position:relative; bottom:30px;">
+<div id="container" style= "position:relative; top:200px;">
  <h1> Daily Tasks </h1>
 <div id="task-name" style= "position:relative; top:50px;">
 <left><h1> Task name: <br> </h1></left>
-<left> <h2> ___________________________________<br> </h2> </left>
-<button onclick="myFunction()">+</button>
-  </div>
+<input style="width:800px;background:#9198e5; font-size:14pt;" type="text" id="myTask" placeholder="Type...";>
+<ul id="myUL">
+<!-- <h2> _________________________________________________________________________________________<br> </h2> -->
+  </ul>
+  <center><button style= "position:relative; left:290px;" onclick="addFunction()">+</button></center>
+    </div>
 
   <div id="subtasks" style= "position:relative; top:50px;">
-  <center> <h1> Subtasks: </h1> </center>
-  <left> <h2> ___________________________________<br> </h2> </left>
-  <button onclick="myFunction()">+</button>
+<h1> Subtasks: </h1>
+<input style="width:800px;background:#9198e5; font-size:14pt;" type="text" id="mySub" placeholder="Type...";>
+<ul id="secondUL">
+<!-- <h2> _________________________________________________________________________________________<br> </h2> -->
+  </ul>
+  <center><button style= "position:relative; left:290px;" onclick="addSub()">+</button></center>
     </div>
 
     <div id="reminder" style= "position:relative; top:50px;">
-    <center> <h1> Green tip: Keep it going! </h1> </center>
-    <center> <h1> Want to add a weekly or monthly version of this goal? <br> </h1> </center>
-  <left> <h2> ___________________________________<br> </h2> </left>
-    <button onclick="myFunction()">+</button>
+ <center> <h1> <h3> Green tip:<h3>  <h1> Keep it going! </h1>  </center>
+<center> <h1> Want to add a weekly or monthly version of this goal? <br> </h1></center>
+ <h2> <label for="Weekly" style= "position:relative; top:25px; left:10px;" onclick="myWeek()">Weekly</label> </h2> <h2> <label for="Monthly" style= "position:relative; bottom:30px; left:350px;" onclick="myMonth()">Monthly</label> </h2> <h2> <label for="Later" style= "position:relative; bottom:80px; left:750px;" onclick="myLater()">Later!</label> </h2>
       </div>
-      <div>
-          <label for="toggle">Toggle</label>
+      </div>
 
-          <input type="checkbox" id="toggle" class="visually-hidden">
-
-          <div class="control-me"></div>
-      </div>
-      </div>
-      <input type=button onClick=window.open("window-child.html","Ratting","width=550,
-      height=170,left=150,top=200,toolbar=0,status=0,"); value="Open Window">
-<button onclick="myFunction()" id="jumpinjoe">plus</button>
+<div style= "position:relative; top:40px; left:100px;">
+<button type="button" onclick="myDone()" class="btn btn-success">Done</button>
+</div>
+<div style= "position:relative; left:800px;">
+<button type="button" onclick="myCancel()" class="btn btn-danger">Cancel</button>
+</div>
    <!-- <span id="content1">The first line.</span><span id="content2">The second line.</span> -->
 </body>
 
