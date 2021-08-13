@@ -15,14 +15,6 @@
   function addFunc() {
    var myNodelist = document.getElementsByTagName("p");
    var i;
-   
-   for (i = 0; i < myNodelist.length; i++) {
-    var span = document.createElement("SPAN");
-    var txt = document.createTextNode("\u00D7");
-    span.className = "close";
-    span.appendChild(txt);
-    myNodelist[i].appendChild(span);
-   }
   // Click on a close button to hide the current list item
   // Click on a close button to hide the current list item
   const checkBox = document.createElement('input')
@@ -33,8 +25,6 @@
   var t = document.createTextNode(inputValue);
   task.appendChild(t);
   var label = document.createElement('label')
-  checkBox.classList.add("daily" + additionalDaily)
-  label.classList.add("daily" + additionalDaily)
   label.htmlFor = t;
   label.appendChild(t);
   var br = document.createElement('br');
@@ -52,22 +42,19 @@
   document.getElementById("myUL").appendChild(br);
   }
   document.getElementById("myTask").value = "";
-   var span = document.createElement("SPAN");
-   var txt = document.createTextNode("\u00D7");
-   span.className = "close";
-   span.appendChild(txt);
-   task.appendChild(span);
    // Click on a close button to hide the current list item
-   var close = document.getElementsByClassName("close");
-   
-   var i;
-   for (i = 0; i < close.length; i++) {
-    close[i].classList.add(JSON.stringify(i));
-    close[i].onclick = function() {
-     var div = this.parentElement;
+   //var close = document.getElementsByClassName("close");
+   checkBox.classList.add("daily" + additionalDaily)
+   label.classList.add("daily" + additionalDaily)
+   span.classList.add(JSON.stringify(additionalDaily))
+    span.onclick = function() {
+     //console.log(this.classList);
      //console.log(i);
      //console.log(close.classList);
+
      var vanish = document.getElementsByClassName("daily" + this.classList[1]);
+
+     
 
      for (j = 0; j < vanish.length; j += 1) {
        vanish[j].style.display = "none";
@@ -77,7 +64,6 @@
      //checkBox.style.display = "none";
      this.style.display = "none";
     }
-   }
    additionalDaily += 1;
  }
  function addWeek() {
@@ -94,10 +80,10 @@
  label.appendChild(t);
  var br = document.createElement('br');
  var span = document.createElement("SPAN");
- var txt = document.createTextNode("\u00D7");
- span.className = "close";
- span.appendChild(txt);
- task.appendChild(span);
+    var txt = document.createTextNode("\u00D7");
+    span.className = "close";
+    span.appendChild(txt);
+    task.appendChild(span);
  if (inputValue === '') {
  alert("You must write something!");
  } else {
@@ -107,34 +93,23 @@
  document.getElementById("weekUL").appendChild(br);
  }
  document.getElementById("weekTask").value = "";
-    var span = document.createElement("SPAN");
-    var txt = document.createTextNode("\u00D7");
-    span.className = "close";
-    span.appendChild(txt);
-    task.appendChild(span);
+    
 
     checkBox.classList.add("weekly" + additionalWeekly)
     label.classList.add("weekly" + additionalWeekly)
     // Click on a close button to hide the current list item
-    var close = document.getElementsByClassName("close");
-    var i;
-    for (i = 0; i < close.length; i++) {
-    close[i].classList.add(JSON.stringify(i));
-    close[i].onclick = function() {
+    span.classList.add(JSON.stringify(additionalWeekly))
+    span.onclick = function() {
      var div = this.parentElement;
-     //console.log(i);
-     //console.log(close.classList);
      var vanish = document.getElementsByClassName("weekly" + this.classList[1]);
+
+     console.log(vanish);
 
      for (j = 0; j < vanish.length; j += 1) {
        vanish[j].style.display = "none";
      }
-    // for (j )
-     //label.style.display = "none";
-     //checkBox.style.display = "none";
      this.style.display = "none";
     }
-   }
    additionalWeekly += 1;
 }
 function addMonth() {
@@ -151,10 +126,10 @@ label.htmlFor = t;
 label.appendChild(t);
 var br = document.createElement('br');
 var span = document.createElement("SPAN");
-var txt = document.createTextNode("\u00D7");
-span.className = "close";
-span.appendChild(txt);
-task.appendChild(span);
+   var txt = document.createTextNode("\u00D7");
+   span.className = "close";
+   span.appendChild(txt);
+   task.appendChild(span);
 if (inputValue === '') {
 alert("You must write something!");
 } else {
@@ -164,34 +139,22 @@ document.getElementById("monthUL").appendChild(span);
 document.getElementById("monthUL").appendChild(br);
 }
 document.getElementById("monthTask").value = "";
-   var span = document.createElement("SPAN");
-   var txt = document.createTextNode("\u00D7");
-   span.className = "close";
-   span.appendChild(txt);
-   task.appendChild(span);
+   
    checkBox.classList.add("monthly" + additionalMonthly)
     label.classList.add("monthly" + additionalMonthly)
 
    // Click on a close button to hide the current list item
-   var close = document.getElementsByClassName("close");
-   var i;
-   for (i = 0; i < close.length; i++) {
-    close[i].classList.add(JSON.stringify(i));
-    close[i].onclick = function() {
+   span.classList.add(JSON.stringify(additionalMonthly))
+    span.onclick = function() {
      var div = this.parentElement;
-     //console.log(i);
-     //console.log(close.classList);
      var vanish = document.getElementsByClassName("monthly" + this.classList[1]);
 
      for (j = 0; j < vanish.length; j += 1) {
        vanish[j].style.display = "none";
      }
-    // for (j )
-     //label.style.display = "none";
-     //checkBox.style.display = "none";
+
      this.style.display = "none";
     }
-   }
    additionalMonthly += 1;
 }
 //
