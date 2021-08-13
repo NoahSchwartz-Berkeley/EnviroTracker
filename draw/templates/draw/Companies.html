@@ -90,7 +90,10 @@
         display:none;
     }
 
-
+    #description {
+        text-align : center;
+        font-size: 30px;
+    }
 </style>
 
 <body>
@@ -108,41 +111,47 @@
 		</div>
 
 		<div class="row" style="height:10vh; margin-top: 1vh;">
-			<!-- <div class="col-9"></div> -->
-			<!-- <h4>Company Name</h4>
-			<h5>ESG Score</h5>
-			<h6>ESG Rating</h6> -->
-
 			<div class="col-3" style="left:12%;  height:10vh">
 				<h4>Company Name</h4>
 			</div>
-  			<div class="col-3" style=" left:12%;height:10vh">
+  			<div class="col-3" id = "ESG-Score" style=" left:12%;height:10vh">
   				<h5>ESG Score <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#tipModal">i</button></h5>
   			</div> 
-			<div class="col-3" style="left:12%;height:10vh">
+			<div class="col-3" id = "ESG-Rating" style="left:12%;height:10vh">
 				<h6>ESG Rating</h6>
 				<h6><button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#tipModal">i</button><h6>
 			</div> 
-
 		</div>
 		
+        <div class="modal fade" id="tipModal" tabindex="-1" aria-labelledby="tipModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id = 'description'>
+                    This description will be replaced
+                </div>
+            </div>
+            </div>
+        </div>
 
-		<div id="Amazon" class="card container">
+		<div id="Amazon" class="card container" data-bs-toggle="modal" data-bs-target="#tipModal">
 	        <div class="card-body">
 	            <!-- <h1 class="card-title font-weight-bold">Company Watchlist</h1> -->
 	            <div class="row bg-light">
-	                <div class="col-5 text-center my-2 border rounded border-dark">
+	                <div class="col-5 text-center my-2 border rounded border-dark" id = 'img0'>
 	                    <br>
 	                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
 	                        style="width:200px; height:114px; border:none; background-color:none">
 	                    <br>
 	                </div>
-	                <div class="col-3 text-center my-2 border rounded border-dark">
+	                <div class="col-3 text-center my-2 border rounded border-dark" id = 'score0'>
 	                    <br>
 	                    <h2>BBB</h2>
 	                    <br>
 	                </div>
-	                <div class="col-4 text-center my-2 border rounded border-dark">
+	                <div class="col-4 text-center my-2 border rounded border-dark" id = 'rating0'>
 	                    <br>
 	                    <h3>AVERAGE</h3>
 	                    <br>
@@ -591,10 +600,27 @@
 </body>
 
 <script>
-   // console.log($("#Amazon").style);
-   // $("#Amazon").style.display="none";
-  // var a = document.getElementById("Amazon");
-   //a.style.display="none";
+    //Help Modals
+    document.getElementById("ESG-Score").onclick = function () {
+            document.getElementById('description').innerHTML = "<div id=\"modalcontents\"> A company’s ESG score is a numerical measure of how it is perceived to be performing on a wide range of environmental, social and governance (ESG) topics.</div>"
+        }
+
+    document.getElementById("ESG-Rating").onclick = function () {
+        document.getElementById('description').innerHTML = "<div id=\"modalcontents\">How a company is performing in its industry in managing the most significant ESG risks and opportunities</div>"
+    }
+
+    document.getElementsByClassName("card")[0].onclick = function () {
+        let img_id = "img0"
+        let img = document.getElementById(img_id).innerHTML
+        let score_id = "score0"
+        let score = document.getElementById(score_id).innerHTML
+        let rating_id = "rating0"
+        let rating = document.getElementById(rating_id).innerHTML
+
+        let sum = img + "<h1>ESG Score</h1>" + score + "<h1>ESG Rating</h1>" + rating
+
+        document.getElementById('description').innerHTML = sum
+    }
 
     function search_companies() {
         
@@ -602,7 +628,6 @@
         let input = document.getElementById('search').value;
         input = input.toLowerCase();
         
-        //let companies = document.getElementsByClassName('companies');
         let companies = ["Amazon", "Target", "Nike", "Apple", "Best Buy", "Ross", "Hewlett Packard", "Sony", "Netflix", "Nintendo", "Bank Of America", "Dollar Tree", "Google", "Microsoft", "Bath and Body Works", "Chipotle", "Adobe", "Adidas"];
         var company = [];
         
